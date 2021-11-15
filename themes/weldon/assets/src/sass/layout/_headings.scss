@@ -1,0 +1,42 @@
+/*------------------------------------|
+|	Heading tags (h1 to h6)                     |
+|------------------------------------*/
+
+h1, .h1 {
+  @include responsive-font-size-heading(36px, 52px);
+  @include responsive-padding-top-bottom(30px, 32px);
+  font-family: $font-beta;
+  padding-top: 0 !important;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+h2, .h2 {
+  @include responsive-font-size-heading(30px, 38px);
+  @include responsive-padding-top-bottom(26px, 32px);
+  font-family: $font-beta;
+  padding-top: 0 !important;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin: 0;
+  text-transform: none;
+}
+
+h3, .h3 {
+  @include responsive-font-size-heading(24px, 28px);
+  @include responsive-padding-top-bottom(25px, 32px);
+  padding-top: 0 !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+h4, .h4 {
+  @include responsive-font-size-heading(20px, 24px);
+  @include responsive-padding-top-bottom(30px, 44px);
+  padding-top: 0 !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}

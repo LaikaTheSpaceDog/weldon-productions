@@ -1,0 +1,26 @@
+.acf-fc-popup .preview {
+	position: absolute;
+	right: calc(100% + 10px);
+	margin-right: 0;
+	top: 0;
+	background: #383c44;
+	/*min-height: 100%;*/
+	border-radius: 5px;
+	align-content: center;
+	display: grid;
+	overflow: hidden;
+	box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.25);
+
+}
+
+.acf-fc-popup .preview .inner-preview {
+	/*padding: 10px;*/
+}
+
+.acf-fc-popup .preview .inner-preview img {
+	max-width: 1100px;
+}
+
+.acf-fc-popup .preview img {
+	display: block;
+}

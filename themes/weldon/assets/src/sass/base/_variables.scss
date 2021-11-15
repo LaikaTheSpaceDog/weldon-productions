@@ -1,0 +1,76 @@
+//------------------------------------
+//	Variables
+//------------------------------------
+
+// Font Sizes
+$base-font-size: 16 !default;
+
+// Font Faces
+$font-alpha: sans-serif;
+$font-beta: sans-serif;
+
+// Box Model
+$box-model: border-box;
+
+// Background and panel colours
+$main-background: #fff;
+$secondary-background: #f3f5f7;
+
+// Background block colours
+$black-block: #201f1f;
+$grey-block: #f9f7f7;
+$image-placeholder: #eaeaea;
+
+//Brand colours
+$brand-primary: #3498db;
+
+// Text colour
+$colour-text-body: #3a3a3a;
+$colour-text-body-grey: #495e67;
+$secondary-nav-color: #798286;
+$colour-text-body-inactive: #ccc;
+$colour-text-body-light: #fff;
+
+// Gradients
+
+// Shadows
+
+// Z-index depth
+$z-index: (
+    hamburguer         : 300,
+    modal              : 200,
+    navigation         : 100,
+    footer             : 90,
+    triangle           : 60,
+    share              : 40,
+    overlay            : 10,
+);
+
+// Breakpoints
+$phone-s: 320px;         // pure-u-p-
+$phone-l: 600px;       // pure-u-pl-
+$tablet-s: 768px;      // pure-u-ts-
+$tablet-m: 840px;      // pure-u-tm-
+$tablet: 980px;        // pure-u-t-
+$tablet-l: 1024px;     // pure-u-tl-
+$tablet-xl: 1124px;    // pure-u-txl-
+$laptop-s: 1280px;     // pure-u-ls-
+$laptop: 1380px;
+$laptop-l: 1680px;
+$desktop: 2000px;
+
+// Sizes
+$max-width: 1600px;
+$min-width: 360px;
+
+$admin-bar-height: 46px;
+$nav-bar-height: 94px;
+
+$main-navigation-height: 90px;
+
+// Spacing
+$global-gutter: 20px;
+$column-spacing: 15px;
+$global-spacing: 32px;
+$block-spacing-max: 90px;
+$block-spacing-min: 40px;
