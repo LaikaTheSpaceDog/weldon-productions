@@ -1,0 +1,39 @@
+// Helpers: Mixins, functions, variables
+@import "base/variables";
+
+// Mixins
+@import "helper/mixins/font";
+@import "helper/mixins/padding";
+@import "helper/mixins/margin";
+@import "helper/mixins/media-query";
+
+// Base: Default settings
+@import "base/base";
+@import "base/fonts";
+@import "base/icon-font";
+
+// Vendors: Third-party css
+@import "vendor/purecss/base";
+@import "vendor/purecss/grids";
+@import "vendor/purecss/grids-responsive";
+//@import "vendor/slick/slick-slider";
+//@import "vendor/select2/select2";
+@import "vendor/animate/animate";
+
+// Layout: Major sections (l- prefix)
+@import "layout/admin-bar";
+@import "layout/constrained";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/headings";
+//@import "layout/ninja-forms";
+
+// Components: Reusable modules or widgets
+@import "components/buttons/buttons";
+@import "components/buttons/hamburger";
+@import "components/sliders/sliders";
+@import "components/modal/modal";
+
+// Theme: Templates and specific sections
+//@import "theme/homepage";
+

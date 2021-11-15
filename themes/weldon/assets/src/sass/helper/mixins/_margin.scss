@@ -1,0 +1,76 @@
+/* Responsive Padding */
+
+// ==============================
+// Padding mixin
+// ==============================
+
+$margin-lock-min: $min-width !default;
+$margin-lock-max: $max-width !default;
+
+//  margin-size
+@mixin responsive-margin-top-bottom (
+  $min,                         // margin-size
+  $max: null,                   // optional maximum margin size
+  $lock-min: $margin-lock-min,  // optional minimum viewport width
+  $lock-max: $margin-lock-max   // optional maximum viewport width
+){
+  & { margin-top: $min;
+    margin-bottom: $min;}
+  @if $max {
+    @media (min-width: $lock-min) and (max-width: $lock-max){
+      & {
+        margin-top: calc(
+                #{$min} +
+                #{num($max) - num($min)} *
+                (100vw - #{$lock-min}) /
+                #{num($lock-max) - num($lock-min)}
+        );
+        margin-bottom: calc(
+                #{$min} +
+                #{num($max) - num($min)} *
+                (100vw - #{$lock-min}) /
+                #{num($lock-max) - num($lock-min)}
+        );
+      }
+    }
+    @media (min-width: $lock-max){
+      & { margin-top: $max;
+        margin-bottom: $max;
+      }
+    }
+  }
+}
+
+//  margin-size
+@mixin responsive-margin-left-right (
+  $min,                         // margin-size
+  $max: null,                   // optional maximum margin size
+  $lock-min: $margin-lock-min,  // optional minimum viewport width
+  $lock-max: $margin-lock-max   // optional maximum viewport width
+){
+  & { margin-left: $min;
+    margin-right: $min;}
+  @if $max {
+    @media (min-width: $lock-min) and (max-width: $lock-max){
+      & {
+        margin-left: calc(
+                #{$min} +
+                #{num($max) - num($min)} *
+                (100vw - #{$lock-min}) /
+                #{num($lock-max) - num($lock-min)}
+        );
+        margin-right: calc(
+                #{$min} +
+                #{num($max) - num($min)} *
+                (100vw - #{$lock-min}) /
+                #{num($lock-max) - num($lock-min)}
+        );
+      }
+    }
+    @media (min-width: $lock-max){
+      & { margin-left: $max;
+        margin-right: $max;
+      }
+    }
+  }
+}
