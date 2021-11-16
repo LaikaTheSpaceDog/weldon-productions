@@ -3,7 +3,7 @@
 Plugin Name: Ninja Forms
 Plugin URI: http://ninjaforms.com/?utm_source=Ninja+Forms+Plugin&utm_medium=readme
 Description: Ninja Forms is a webform builder with unparalleled ease of use and features.
-Version: 3.4.24.3
+Version: 3.6.6
 Author: Saturday Drive
 Author URI: http://ninjaforms.com/?utm_source=Ninja+Forms+Plugin&utm_medium=Plugins+WP+Dashboard
 Text Domain: ninja-forms
@@ -32,16 +32,12 @@ function ninja_forms_three_table_exists(){
 
 if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf2to3' ] ) && ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) ){
 
-    include 'deprecated/ninja-forms.php';
+    require_once dirname(__FILE__).'/includes/Integrations/LoadLegacy.php';
 
-    register_activation_hook( __FILE__, 'ninja_forms_activation_deprecated' );
-
-    function ninja_forms_activation_deprecated( $network_wide ){
-        include_once 'deprecated/includes/activation.php';
-
-        ninja_forms_activation( $network_wide );
-    }
-
+    $legacyLoader = new NF_LoadLegacy();
+    
+    add_action('plugins_loaded',array($legacyLoader,'handle'));
+    
 } else {
 
     include_once 'lib/NF_Upgrade.php';
@@ -59,7 +55,7 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
          * @since 3.0
          */
 
-        const VERSION = '3.4.24.3';
+        const VERSION = '3.6.6';
         
         /**
          * @since 3.4.0
@@ -180,6 +176,11 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
         public $tracking;
 
         /**
+         *
+         * @var NF_Handlers_FieldsetRepeater
+         */
+        public $fieldsetRepeater;
+        /**
          * Plugin Settings
          *
          * @since 3.0
@@ -271,6 +272,11 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                 spl_autoload_register( array( self::$instance, 'autoloader' ) );
 
                 /*
+                 * Plugin Settings
+                 */
+                self::$instance->settings = apply_filters( 'ninja_forms_settings', get_option( 'ninja_forms_settings' ) );
+
+                /*
                  * Admin Menus
                  */
                 self::$instance->menus[ 'forms' ]           = new NF_Admin_Menus_Forms();
@@ -304,6 +310,11 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                  */
                 self::$instance->controllers[ 'REST' ][ 'forms' ] = new NF_AJAX_REST_Forms();
                 self::$instance->controllers[ 'REST' ][ 'new-form-templates' ] = new NF_AJAX_REST_NewFormTemplates();
+
+                /*
+                *   API Routes
+                */
+                self::$instance->routes[ 'submissions' ] = new NF_Routes_Submissions();
 
                 /*
                  * Async Requests
@@ -347,6 +358,12 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                 new NF_Admin_CPT_DownloadAllSubmissions();
                 require_once Ninja_Forms::$dir . 'lib/StepProcessing/menu.php';
 
+                /**
+                 * Blocks
+                 */
+
+                require_once Ninja_Forms::$dir . 'blocks/ninja-forms-blocks.php';
+                
                 /*
                  * Submission Metabox
                  */
@@ -388,11 +405,6 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                 self::$instance->_eos[ 'parser' ] = require_once 'includes/Libraries/EOS/Parser.php';
 
                 /*
-                 * Plugin Settings
-                 */
-                self::$instance->settings = apply_filters( 'ninja_forms_settings', get_option( 'ninja_forms_settings' ) );
-
-                /*
                  * Admin Notices System
                  */
                 self::$instance->notices = new NF_Admin_Notices();
@@ -400,16 +412,15 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                 self::$instance->widgets[] = new NF_Widget();
 
                 /*
-                 * Gutenberg
-                 */
-                self::$instance->gutenblock = new NF_FormBlock();
-
-                /*
                  * Opt-In Tracking
                  */
                 self::$instance->tracking = new NF_Tracking();
 
-
+                /*
+                 * Fieldset Repeater Handler
+                 */
+                self::$instance->fieldsetRepeater =  new NF_Handlers_FieldsetRepeater();
+                
                 self::$instance->submission_expiration_cron = new NF_Database_SubmissionExpirationCron();
 
                 /*
@@ -693,7 +704,6 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
                 'ninja-forms-multi-part',
                 'ninja-forms-layout-styles', // Account for development environments.
                 'ninja-forms-style',
-                'ninja-shop',
                 'ninja-mail', // Account for Ninja Mail as legacy for SendWP.
                 'sendwp'
             );
@@ -743,7 +753,9 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
             /*
              * Form Action Registration
              */
-            self::$instance->actions = apply_filters( 'ninja_forms_register_actions', self::load_classes( 'Actions' ) );
+            $actions = self::load_classes( 'Actions' ) ;
+            uksort( $actions, [ $this, 'sort_actions' ] );
+            self::$instance->actions = apply_filters( 'ninja_forms_register_actions', $actions );
 
             /*
              * Merge Tag Registration
@@ -940,6 +952,17 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
          * PRIVATE METHODS
          */
 
+        private function sort_actions( $a, $b )
+        {
+            // Create a numeric lookup by flipping the non-associative array.
+            $custom_order = array_flip( $this->config( 'ActionTypeOrder' ) );
+
+            $a_order = ( isset( $custom_order[ $a ] ) ) ? $custom_order[ $a ] : 9001;
+            $b_order = ( isset( $custom_order[ $b ] ) ) ? $custom_order[ $b ] : 9001;
+
+            return intval( $a_order >= $b_order );
+        }
+
         /**
          * Load Classes from Directory
          *
@@ -1030,6 +1053,12 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
 
             // Disable "Dev Mode" for new installation.
             Ninja_Forms()->update_setting('builder_dev_mode', 0);
+
+            // Grab our initial add-on feed from api.ninjaforms.com
+            nf_update_marketing_feed();
+
+            // Setup our add-on feed wp cron so that our add-on list is up to date on a weekly basis.
+            nf_marketing_feed_cron_job();
         }
 
         /**
@@ -1290,5 +1319,4 @@ if( get_option( 'ninja_forms_load_deprecated', FALSE ) && ! ( isset( $_POST[ 'nf
             wp_schedule_event( current_time( 'timestamp' ), 'nf-weekly', 'nf_marketing_feed_cron' );
         }
     }
-    add_action( 'wp', 'nf_marketing_feed_cron_job' );
 }

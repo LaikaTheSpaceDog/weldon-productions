@@ -7,7 +7,7 @@
             <?php if( $tab == $active_tab ): ?>
                 <span class="nav-tab nav-tab-active"><?php echo $name ?></span>
             <?php else: ?>
-                <a href="<?php echo add_query_arg( 'tab', $tab );?>" target="" class="nav-tab "><?php echo $name ?></a>
+                <a href="<?php echo esc_url( add_query_arg( 'tab', $tab ) ); ?>" target="" class="nav-tab "><?php echo $name ?></a>
             <?php endif; ?>
         <?php endforeach; ?>
     </h2>
@@ -57,7 +57,7 @@
                                             echo "<input type='text' class='code widefat' name='{$setting['id']}' id='{$setting['id']}' value='" . esc_attr($setting['value']) . "'>";
                                             break;
                                         case 'password' :
-                                            echo "<input type='password' class='code widefat' name='{$setting['id']}' id='{$setting['id']}' value='" . esc_attr($setting['value']) . ">";
+                                            echo "<input type='password' class='code widefat' name='{$setting['id']}' id='{$setting['id']}' value='" . esc_attr($setting['value']) . "'>";
                                             break;		
                                         case 'checkbox' :
                                             $checked = ( $setting[ 'value' ] ) ? 'checked' : '';

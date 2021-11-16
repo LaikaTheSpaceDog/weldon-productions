@@ -15,12 +15,9 @@ renderTrackingCodes('body');
 
 	<div class="section__constrained">
 		<a href="<?php echo get_home_url(); ?>" class="l-header__logo">
-			Your logo here
 			<!-- Place here your SVG logo -->
 		</a>
 		<nav class="l-header__nav nav__container">
-			<h3>Header Menu</h3>
-			<p>(Create a Wordpress Menu and assign it to "Header" location)</p>
 			<?php
 			$args = array(
 				'theme_location' => 'header',
