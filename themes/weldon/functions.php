@@ -13,7 +13,7 @@ add_image_size('home-slider', 1800, 500, true); // Homepage banner slider
 // Include CSS & JS files
 // ----------------------
 
-function fanatic_scripts() {
+function weldon_scripts() {
 	// get from local copy to improve the performance
 	wp_deregister_script('jquery');
 	wp_register_script('jquery', get_template_directory_uri().'/assets/vendor/jq/jq.js' , array() , '3.4.1', false);
@@ -23,39 +23,11 @@ function fanatic_scripts() {
 
 	// Theme Scripts
 	wp_enqueue_script('blazy-scripts', get_template_directory_uri().'/assets/vendor/blazy/blazy.min.js', array('jquery') , '1.8.2', true);
-	wp_enqueue_script('wow-scripts', get_template_directory_uri().'/assets/vendor/wow/wow.min.js', array('jquery') , '3.0.0', true);
-	wp_enqueue_script('skrollr-scripts', get_template_directory_uri().'/assets/vendor/skrollr/skrollr.min.js', array('jquery') , '0.6', true);
 	wp_enqueue_script( 'slick-scripts', get_template_directory_uri().'/assets/vendor/slick/slick.min.js', array( 'jquery' ), '1.0' , true );
 	wp_enqueue_script( 'theme-scripts', get_template_directory_uri().'/assets/js/script.min.js?' . time(), array( 'jquery' ), '1.0' , false );
-
-	// Load on single page for specific post_type
-	if( is_single( 'your_post_type' ) ) {
-		// Load script or CSS here
-	}
-
-	// Load on homepage
-	if( is_front_page() ) {
-		// Load script or CSS here
-	}
-
-	// Load on search results page
-	if( is_search() ) {
-		// Load script or CSS here
-	}
-
-	// Load on page with specific template
-	if(is_page()){ //Check if we are viewing a page
-		global $wp_query;
-
-		//Check which template is assigned to current page we are looking at
-		$template_name = get_post_meta( $wp_query->post->ID, '_wp_page_template', true );
-		if($template_name == 'page-template.php'){
-			// Load script or CSS here
-		}
-	}
-
 }
-add_action('wp_enqueue_scripts' , 'fanatic_scripts');
+
+add_action('wp_enqueue_scripts' , 'weldon_scripts');
 
 // ---------------------------------------------------
 // Defer jQuery Parsing using the HTML5 defer property
@@ -109,36 +81,10 @@ function my_mce_before_init_insert_formats( $init_array ) {
 	$init_array['style_formats'] = json_encode( $style_formats );
 
 	return $init_array;
-
 }
+
 // Attach callback to 'tiny_mce_before_init'
-add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats', 1 );
-
-
-
-// --------------------------------------------
-// Show images illustrating the flexible blocks
-// --------------------------------------------
-
-add_action('admin_enqueue_scripts', 'acf_flexible_content_thumbnail');
-function acf_flexible_content_thumbnail()
-{
-
-	// REGISTER ADMIN.CSS
-	wp_enqueue_style('css-theme-admin', get_template_directory_uri() . '/assets/css/admin.css', false, 1.0);
-
-	// REGISTER ADMIN.JS
-	wp_register_script('js-theme-admin', get_template_directory_uri() . '/assets/js/admin.js', array('jquery'), 1.0, true);
-	wp_localize_script('js-theme-admin', 'theme_var',
-		array(
-			'upload' => get_template_directory_uri() . '/assets/img/flexible-blocks/',
-		)
-	);
-	wp_enqueue_script('js-theme-admin');
-
-}
-
- 	
+add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats', 1 ); 	
 
 function register_jobs_post_type() {
 	$labels = array(

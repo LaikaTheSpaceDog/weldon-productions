@@ -1,0 +1,26 @@
+.about-me {
+    margin-bottom: 30px;
+    
+    .about-me__inner {
+        display: flex;
+
+        .about-me__left, .about-me__right {
+            width: 50%;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .about-me__left {
+            padding-right: 20px;
+        }
+        .about-me__right {
+            padding-left: 20px;
+        }
+    }
+}

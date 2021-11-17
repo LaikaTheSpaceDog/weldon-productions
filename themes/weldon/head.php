@@ -30,9 +30,6 @@
 
 	<?php
 	wp_head();
-
-	// Tracking scripts for head block
-	renderTrackingCodes('header');
 	?>
 
 </head>

@@ -1,6 +1,6 @@
 <hr>
-    <footer class="wrapper__padding">
-        <div class="section__constrained wrapper__padding bottom">
+    <footer>
+        <div class="section__constrained">
             <?php
               $args = array(
                 'theme_location' => 'footer',
@@ -15,8 +15,6 @@
 	</footer>
 
   <?php
-  // Tracking scripts for footer block
-  renderTrackingCodes('footer');
 
   wp_footer(); ?>
 
