@@ -1,4 +1,4 @@
-# Fanatic Starter Theme
+# Weldon Theme
 
 This guide is showing how to setup a new Wordpress website on your machine and all features included into this Starter 
 Theme
@@ -26,7 +26,6 @@ To install it, you can follow the [following guide](https://wp-cli.org/)
 Open your terminal and move to an empty folder that will contain your project in XAMPP.
 
 * Execute: ```wp core download```
-* Execute: ```wp core install --url=project-name.local --title=Fanatic --admin_user=fanatic --admin_password=fanatic22 --admin_email=dev@fanaticdesign.co.uk```
 
 
 ## Running the tests

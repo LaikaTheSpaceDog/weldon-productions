@@ -6,17 +6,10 @@
 
 <body <?php body_class(); ?>>
 
-<?php
-// Tracking scripts for body block
-renderTrackingCodes('body');
-?>
-
 <header class="l-header">
 
 	<div class="section__constrained">
-		<a href="<?php echo get_home_url(); ?>" class="l-header__logo">
-			<!-- Place here your SVG logo -->
-		</a>
+		<h1>Zoe Weldon Productions</h1>
 		<nav class="l-header__nav nav__container">
 			<?php
 			$args = array(
