@@ -18,6 +18,24 @@ $contact_title = get_field('contact_title');
 $contact_copy = get_field('contact_copy');
 $form = get_field('form');
 
+$current_args = array(
+	'numberposts' => -1,
+	'post_type' => 'jobs',
+	'meta_key' => 'current',
+	'meta_value' => 1
+);
+
+$current = get_posts($current_args);
+
+$previous_args = array(
+	'numberposts' => -1,
+	'post_type' => 'jobs',
+	'meta_key' => 'current',
+	'meta_value' => 0
+);
+
+$previous = get_posts($previous_args);
+
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
@@ -45,7 +63,7 @@ if ( have_posts() ) {
 											<a class="btn" href="<?= $am_link_3['url']; ?>"><?= $am_link_3['title']; ?></a>
 										<?php endif; ?>
 										<?php if($cv): ?>
-											<a class="btn" href="<?= $cv['url']; ?>">My CV</a>
+											<a class="btn" href="<?= $cv['url']; ?>" download>My CV</a>
 										<?php endif; ?>
 									</div>
 								<?php endif; ?>
@@ -54,6 +72,40 @@ if ( have_posts() ) {
 					</div>
 					<div class="current-work">
 						<h2><?= $curr_title; ?></h2>
+						<div class="current-work__inner">
+							<?php if(count($current) == 1):
+								foreach($current as $job): ?>
+									<div class="current-work__job single-job">
+										<div class="single-job__image">
+											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+										</div>
+										<div class="single-job__copy">
+											<h3><?= get_field('title', $job); ?></h3>
+											<p><?= get_field('description', $job); ?></p>
+											<?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
+												<div class="single-job_links">
+													<?php if(get_field('link_1', $job)): ?>
+														<a class="btn" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
+													<?php endif; ?>
+													<?php if(get_field('link_2', $job)): ?>
+														<a class="btn" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
+													<?php endif; ?>
+													<?php if(get_field('link_3', $job)): ?>
+														<a class="btn" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
+													<?php endif; ?>
+												</div>
+											<?php endif; ?>
+										</div>
+									</div>
+								<?php endforeach;
+							else:
+								foreach($current as $job): ?>
+									<div class="current-work__job">
+
+									</div>
+								<?php endforeach;
+							endif; ?>
+						</div>
 					</div>
 					<div class="previous-work">
 						<h2><?= $prev_title; ?></h2>
