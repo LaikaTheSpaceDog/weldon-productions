@@ -4,8 +4,15 @@
         padding-bottom: 20px;
     }
     .l-footer__nav {
+        padding: 0;
+        
         .menu-item {
             margin-bottom: 5px;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+            }
         }
     }
 }
