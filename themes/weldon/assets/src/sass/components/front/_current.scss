@@ -1,0 +1,32 @@
+.current-work {
+    margin-bottom: 30px;
+    .current-work__inner {
+        .current-work__job {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .current-work__job.single-job {
+            flex-direction: row;
+
+            .single-job__image {
+                width: 50%;
+                max-width: 50%;
+                margin-right: 20px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .single-job__copy {
+                width: 50%;
+                max-width: 50%;
+                margin-left: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+    }
+}
