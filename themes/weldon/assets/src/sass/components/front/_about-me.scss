@@ -21,6 +21,12 @@
         }
         .about-me__right {
             padding-left: 20px;
+
+            .about-me__links {
+                a:first-of-type {
+                    padding-left: 0;
+                }
+            }
         }
     }
 }

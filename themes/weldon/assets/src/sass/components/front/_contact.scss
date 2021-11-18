@@ -1,0 +1,28 @@
+.contact {
+    .contact__inner {
+        display: flex;
+
+        .contact__left, .contact__right {
+            width: 50%;
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact__left {
+            padding-right: 20px;
+
+            .nf-form-cont {
+                .nf-form-fields-required {
+                    display: none;
+                }
+
+                textarea {
+                    resize: none;
+                }
+            }
+        }
+        .contact__right {
+            padding-left: 20px;
+        }
+    }
+}

@@ -60,6 +60,14 @@ if ( have_posts() ) {
 					</div>
 					<div class="contact">
 						<h2><?= $contact_title; ?></h2>
+						<div class="contact__inner">
+							<div class="contact__left">
+								<?= do_shortcode('[ninja_form id=' . $form .']'); ?>
+							</div>
+							<div class="contact__right">
+								<?= $contact_copy; ?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

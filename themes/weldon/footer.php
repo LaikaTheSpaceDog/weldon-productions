@@ -1,6 +1,7 @@
 <hr>
-    <footer>
+    <footer class="l-footer">
         <div class="section__constrained">
+            <h2 class="h4">Zoe Weldon Productions</h2>
             <?php
               $args = array(
                 'theme_location' => 'footer',
