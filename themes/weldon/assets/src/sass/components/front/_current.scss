@@ -38,6 +38,7 @@
         .single-job {
             display: flex;
             flex-direction: row;
+            cursor: default;
 
             .single-job__image {
                 width: 50%;
