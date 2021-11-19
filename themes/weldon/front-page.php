@@ -54,16 +54,16 @@ if ( have_posts() ) {
 								<?php if($am_link_1 || $am_link_2 || $am_link_3 || $cv): ?>
 									<div class="about-me__links">
 										<?php if($am_link_1): ?>
-											<a class="btn" href="<?= $am_link_1['url']; ?>"><?= $am_link_1['title']; ?></a>
+											<a class="link" href="<?= $am_link_1['url']; ?>"><?= $am_link_1['title']; ?></a>
 										<?php endif; ?>
 										<?php if($am_link_2): ?>
-											<a class="btn" href="<?= $am_link_2['url']; ?>"><?= $am_link_2['title']; ?></a>
+											<a class="link" href="<?= $am_link_2['url']; ?>"><?= $am_link_2['title']; ?></a>
 										<?php endif; ?>
 										<?php if($am_link_3): ?>
-											<a class="btn" href="<?= $am_link_3['url']; ?>"><?= $am_link_3['title']; ?></a>
+											<a class="link" href="<?= $am_link_3['url']; ?>"><?= $am_link_3['title']; ?></a>
 										<?php endif; ?>
 										<?php if($cv): ?>
-											<a class="btn" href="<?= $cv['url']; ?>" download>My CV</a>
+											<a class="link" href="<?= $cv['url']; ?>" download>My CV</a>
 										<?php endif; ?>
 									</div>
 								<?php endif; ?>
@@ -83,15 +83,15 @@ if ( have_posts() ) {
 											<h3><?= get_field('title', $job); ?></h3>
 											<p><?= get_field('description', $job); ?></p>
 											<?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
-												<div class="single-job_links">
+												<div class="single-job__links">
 													<?php if(get_field('link_1', $job)): ?>
-														<a class="btn" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
+														<a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
 													<?php endif; ?>
 													<?php if(get_field('link_2', $job)): ?>
-														<a class="btn" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
+														<a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
 													<?php endif; ?>
 													<?php if(get_field('link_3', $job)): ?>
-														<a class="btn" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
+														<a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
 													<?php endif; ?>
 												</div>
 											<?php endif; ?>
@@ -100,8 +100,13 @@ if ( have_posts() ) {
 								<?php endforeach;
 							else:
 								foreach($current as $job): ?>
-									<div class="current-work__job">
-
+									<div class="current-work__job <?= count($current) == 2 ? 'pair' : ''; ?>">
+										<div class="current-work__job-image">
+											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+										</div>
+										<div class="current-work__job-copy">
+											<h3><?= get_field('title', $job); ?></h3>
+										</div>
 									</div>
 								<?php endforeach;
 							endif; ?>
