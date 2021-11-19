@@ -2309,6 +2309,7 @@ h4, .h4 {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  cursor: default;
 }
 .work .work__inner .single-job .single-job__image {
   width: 50%;
