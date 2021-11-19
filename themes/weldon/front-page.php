@@ -77,7 +77,7 @@ if ( have_posts() ) {
 								foreach($current as $job): ?>
 									<div class="work__job single-job">
 										<div class="single-job__image">
-											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+											<img class="b-lazy" src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 										</div>
 										<div class="single-job__copy">
 											<h3><?= get_field('title', $job); ?></h3>
@@ -102,7 +102,7 @@ if ( have_posts() ) {
 								foreach($current as $job): ?>
 									<div class="work__job <?= count($current) == 2 ? 'pair' : ''; ?>">
 										<div class="work__job-image">
-											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+											<img class="b-lazy" src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 										</div>
 										<div class="work__job-copy">
 											<h3><?= get_field('title', $job); ?></h3>
@@ -119,7 +119,7 @@ if ( have_posts() ) {
 								foreach($previous as $job): ?>
 									<div class="work__job single-job">
 										<div class="single-job__image">
-											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+											<img class="b-lazy" src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 										</div>
 										<div class="single-job__copy">
 											<h3><?= get_field('title', $job); ?></h3>
@@ -144,7 +144,7 @@ if ( have_posts() ) {
 								foreach($previous as $job): ?>
 									<div class="work__job <?= count($previous) == 2 ? 'pair' : ''; ?>">
 										<div class="work__job-image">
-											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+											<img class="b-lazy" src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 										</div>
 										<div class="work__job-copy">
 											<h3><?= get_field('title', $job); ?></h3>
