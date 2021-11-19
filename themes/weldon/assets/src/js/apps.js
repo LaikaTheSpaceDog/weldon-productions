@@ -20,7 +20,7 @@
     })
 
     function headerScroll(){
-        $('.l-header .menu-item a').click(function(e){
+        $('.l-header .menu-item a, .l-footer .menu-item a').click(function(e){
             e.preventDefault();
             var id = $(this).attr('href');
             if(id == '#about-me'){
@@ -30,6 +30,8 @@
             } else if (id == '#previous-work'){
                 var speed = 1500;
             } else if (id == '#contact-me'){
+                var speed = 2000;
+            } else {
                 var speed = 2000;
             }
             $([document.documentElement, document.body]).animate({
