@@ -43,7 +43,7 @@ if ( have_posts() ) {
 		<main>
 			<div class="section__constrained">
 				<div class="main-content">
-					<div class="about-me">
+					<div class="about-me" id="about-me">
 						<h2><?= $am_title; ?></h2>
 						<div class="about-me__inner">
 							<div class="about-me__left">
@@ -70,7 +70,7 @@ if ( have_posts() ) {
 							</div>
 						</div>
 					</div>
-					<div class="work">
+					<div class="work" id="current-work">
 						<h2><?= $curr_title; ?></h2>
 						<div class="work__inner">
 							<?php if(count($current) == 1):
@@ -112,7 +112,7 @@ if ( have_posts() ) {
 							endif; ?>
 						</div>
 					</div>
-					<div class="work">
+					<div class="work" id="previous-work">
 						<h2><?= $prev_title; ?></h2>
 						<div class="work__inner">
 							<?php if(count($previous) == 1):
@@ -154,7 +154,7 @@ if ( have_posts() ) {
 							endif; ?>
 						</div>
 					</div>
-					<div class="contact">
+					<div class="contact" id="contact-me">
 						<h2><?= $contact_title; ?></h2>
 						<div class="contact__inner">
 							<div class="contact__left">
