@@ -2279,6 +2279,7 @@ h4, .h4 {
       -ms-flex-direction: column;
           flex-direction: column;
   min-width: calc(33.33% - 13.33px);
+  cursor: pointer;
 }
 .work .work__inner .work__job .work__job-image {
   width: 100%;
