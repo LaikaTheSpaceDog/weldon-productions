@@ -24,6 +24,7 @@ function weldon_scripts() {
 	// Theme Scripts
 	wp_enqueue_script('blazy-scripts', get_template_directory_uri().'/assets/vendor/blazy/blazy.min.js', array('jquery') , '1.8.2', true);
 	wp_enqueue_script( 'slick-scripts', get_template_directory_uri().'/assets/vendor/slick/slick.min.js', array( 'jquery' ), '1.0' , true );
+	wp_enqueue_script( 'jquery-easing-scripts', get_template_directory_uri().'/assets/vendor/jq/jquery.easing-1.3.pack.js', array( 'jquery' ), '1.0' , false );
 	wp_enqueue_script( 'theme-scripts', get_template_directory_uri().'/assets/js/script.min.js?' . time(), array( 'jquery' ), '1.0' , false );
 }
 

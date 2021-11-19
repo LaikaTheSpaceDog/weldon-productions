@@ -15,8 +15,28 @@
         var bLazy = new Blazy({
             // Options
         });
-        console.log("HELLO");
+        
+        headerScroll();
     })
+
+    function headerScroll(){
+        $('.l-header .menu-item a').click(function(e){
+            e.preventDefault();
+            var id = $(this).attr('href');
+            if(id == '#about-me'){
+                var speed = 500;
+            } else if (id == '#current-work'){
+                var speed = 1000;
+            } else if (id == '#previous-work'){
+                var speed = 1500;
+            } else if (id == '#contact-me'){
+                var speed = 2000;
+            }
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $(id).offset().top
+            }, speed, 'easeInOutSine');
+        })
+    }
 
 
 })(jQuery);
