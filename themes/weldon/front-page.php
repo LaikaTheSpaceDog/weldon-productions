@@ -70,12 +70,12 @@ if ( have_posts() ) {
 							</div>
 						</div>
 					</div>
-					<div class="current-work">
+					<div class="work">
 						<h2><?= $curr_title; ?></h2>
-						<div class="current-work__inner">
+						<div class="work__inner">
 							<?php if(count($current) == 1):
 								foreach($current as $job): ?>
-									<div class="current-work__job single-job">
+									<div class="work__job single-job">
 										<div class="single-job__image">
 											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 										</div>
@@ -100,11 +100,11 @@ if ( have_posts() ) {
 								<?php endforeach;
 							else:
 								foreach($current as $job): ?>
-									<div class="current-work__job <?= count($current) == 2 ? 'pair' : ''; ?>">
-										<div class="current-work__job-image">
+									<div class="work__job <?= count($current) == 2 ? 'pair' : ''; ?>">
+										<div class="work__job-image">
 											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 										</div>
-										<div class="current-work__job-copy">
+										<div class="work__job-copy">
 											<h3><?= get_field('title', $job); ?></h3>
 										</div>
 									</div>
@@ -112,8 +112,47 @@ if ( have_posts() ) {
 							endif; ?>
 						</div>
 					</div>
-					<div class="previous-work">
+					<div class="work">
 						<h2><?= $prev_title; ?></h2>
+						<div class="work__inner">
+							<?php if(count($previous) == 1):
+								foreach($previous as $job): ?>
+									<div class="work__job single-job">
+										<div class="single-job__image">
+											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+										</div>
+										<div class="single-job__copy">
+											<h3><?= get_field('title', $job); ?></h3>
+											<p><?= get_field('description', $job); ?></p>
+											<?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
+												<div class="single-job__links">
+													<?php if(get_field('link_1', $job)): ?>
+														<a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
+													<?php endif; ?>
+													<?php if(get_field('link_2', $job)): ?>
+														<a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
+													<?php endif; ?>
+													<?php if(get_field('link_3', $job)): ?>
+														<a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
+													<?php endif; ?>
+												</div>
+											<?php endif; ?>
+										</div>
+									</div>
+								<?php endforeach;
+							else:
+								foreach($previous as $job): ?>
+									<div class="work__job <?= count($previous) == 2 ? 'pair' : ''; ?>">
+										<div class="work__job-image">
+											<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+										</div>
+										<div class="work__job-copy">
+											<h3><?= get_field('title', $job); ?></h3>
+										</div>
+									</div>
+								<?php endforeach;
+							endif; ?>
+						</div>
 					</div>
 					<div class="contact">
 						<h2><?= $contact_title; ?></h2>
