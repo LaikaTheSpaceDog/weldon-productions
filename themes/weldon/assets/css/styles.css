@@ -26,6 +26,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  transition: overflow ease-in-out 2000ms;
 }
 body {
   font-size: 16px;
@@ -2336,12 +2337,9 @@ h4, .h4 {
   width: 100%;
   height: 100%;
   background-color: #f9f7f5;
-  opacity: 0.5;
+  opacity: 0.7;
   display: none;
   z-index: 2;
-}
-.work .work__inner .work__job .work__job-mask.active {
-  display: block;
 }
 .work .work__inner .work__job .work__job-modal {
   opacity: 1;
@@ -2355,9 +2353,8 @@ h4, .h4 {
   transform: translate(-50%, -50%);
   box-shadow: 0px 12px 40px #00000029;
   padding: 20px;
-}
-.work .work__inner .work__job .work__job-modal.active {
-  display: block;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .work .work__inner .single-job {
   display: flex;

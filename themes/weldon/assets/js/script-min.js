@@ -1,1 +1,1 @@
-jQuery(function(o){o(document).ready(function(){new Blazy({});o(".has_modal").length>0&&o(".has_modal").click(a=>{o(a.currentTarget).find(".work__job-modal, .work__job-mask").toggleClass("active"),o("body").toggleClass("no-scroll")})})});
+jQuery(function(o){o(document).ready(function(){new Blazy({});o(".has_modal").length>0&&o(".has_modal").click(n=>{var e=window.innerWidth-document.documentElement.clientWidth;o(n.currentTarget).find(".work__job-modal, .work__job-mask").fadeToggle(),o("body").css("width","calc(100% - "+e+"px)"),o("body").toggleClass("no-scroll")})})});

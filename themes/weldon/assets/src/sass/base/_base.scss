@@ -30,6 +30,7 @@ body {
   margin: 0;
   overflow-x: hidden;
   overflow-y: scroll;
+  transition: overflow ease-in-out 2000ms;
 }
 
 p {
