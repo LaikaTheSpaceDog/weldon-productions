@@ -100,11 +100,15 @@ if ( have_posts() ) {
 								<?php endforeach;
 							else:
 								foreach($current as $job): ?>
-									<div class="work__job <?= count($current) == 2 ? 'pair' : ''; ?>">
+									<div class="work__job has_modal <?= count($current) == 2 ? 'pair' : ''; ?>">
 										<div class="work__job-image">
 											<img class="b-lazy" src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 										</div>
 										<div class="work__job-copy">
+											<h3><?= get_field('title', $job); ?></h3>
+										</div>
+										<div class="work__job-mask"></div>
+										<div class="work__job-modal">
 											<h3><?= get_field('title', $job); ?></h3>
 										</div>
 									</div>
