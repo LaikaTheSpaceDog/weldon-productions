@@ -6,15 +6,16 @@
 $base-font-size: 16 !default;
 
 // Font Faces
-$font-alpha: sans-serif;
-$font-beta: sans-serif;
+$font-alpha: "gothambook", sans-serif;
+$font-beta: "brolimoregular", sans-serif;
 
 // Box Model
 $box-model: border-box;
 
 // Background and panel colours
-$main-background: #fff;
+$main-background: #f9f7f5;
 $secondary-background: #f3f5f7;
+
 
 // Background block colours
 $black-block: #201f1f;
@@ -25,7 +26,7 @@ $image-placeholder: #eaeaea;
 $brand-primary: #3498db;
 
 // Text colour
-$colour-text-body: #3a3a3a;
+$colour-text-body: #2c4645;
 $colour-text-body-grey: #495e67;
 $secondary-nav-color: #798286;
 $colour-text-body-inactive: #ccc;
