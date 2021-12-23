@@ -184,6 +184,7 @@ if ( have_posts() ) {
 										<div class="work__job-mask"></div>
 										<div class="work__job-modal">
 											<div class="work__job single-job">
+												<span class="work__job-modal-close"></span>
 												<div class="single-job__image">
 													<img src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 												</div>
