@@ -18,6 +18,9 @@ $contact_title = get_field('contact_title');
 $contact_copy = get_field('contact_copy');
 $form = get_field('form');
 
+$hero = get_field('hero_image');
+$logo_color = get_field('hero_logo_color');
+
 $current_args = array(
 	'numberposts' => -1,
 	'post_type' => 'jobs',
@@ -41,6 +44,9 @@ if ( have_posts() ) {
 		the_post();
 		?>
 		<main>
+			<div class="hero" style="background-image:url(<?= $hero['url']; ?>)">
+				<img src="/wp-content/themes/weldon/assets/img/logos/logo-<?= $logo_color ?>.png" alt="Zoe Weldon Productions logo" draggable="false" />
+			</div>
 			<div class="section__constrained">
 				<div class="main-content">
 					<div class="about-me" id="about-me">

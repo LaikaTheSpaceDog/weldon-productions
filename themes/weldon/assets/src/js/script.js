@@ -4,7 +4,9 @@ jQuery(function($) {
             // Options
         });
 
+        heroPos();
         modalToggle();
+        headerNav();
     });
 
     function modalToggle(){
@@ -28,5 +30,20 @@ jQuery(function($) {
                 },1000);
             })
         }
+    }
+
+    function heroPos(){
+        let headerHeight =  $('.nav').outerHeight() +  parseInt($('.nav').css('margin-top')) + parseInt($('.nav').css('margin-bottom'));
+        $('.hero').css('top', -headerHeight + 'px');
+    }
+
+    function headerNav(){
+        $('.menu-item').click(function(e){
+            e.preventDefault();
+            let id = $(e.currentTarget).find('a').attr('href');
+            $('html, body').animate({
+                scrollTop: $(id).offset().top - 20
+            }, 1000, 'easeInOutCubic');
+        })
     }
 })
