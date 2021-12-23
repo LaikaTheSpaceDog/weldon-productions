@@ -9,7 +9,6 @@
 <header class="l-header">
 
 	<div class="section__constrained">
-		<h1>Zoe Weldon Productions</h1>
 		<nav class="l-header__nav nav__container">
 			<?php
 			$args = array(
