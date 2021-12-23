@@ -2383,6 +2383,8 @@ h4, .h4 {
 }
 .work .work__inner .single-job .single-job__image img {
   width: 100%;
+  max-height: 500px;
+  object-fit: cover;
 }
 .work .work__inner .single-job .single-job__copy {
   width: 50%;
