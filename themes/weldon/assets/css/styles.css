@@ -2309,6 +2309,8 @@ h4, .h4 {
   display: flex;
   flex-direction: column;
   min-width: calc(33.33% - 13.33px);
+}
+.work .work__inner .work__job:not(.active) {
   cursor: pointer;
 }
 .work .work__inner .work__job .work__job-image {
@@ -2355,6 +2357,18 @@ h4, .h4 {
   padding: 20px;
   border-radius: 5px;
   overflow: hidden;
+}
+.work .work__inner .work__job .work__job-modal .work__job-modal-close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/wp-content/themes/weldon/assets/img/icons/close-line.svg);
+  font-size: 20px;
+  content: "";
+  background-size: contain;
+  cursor: pointer;
 }
 .work .work__inner .single-job {
   display: flex;

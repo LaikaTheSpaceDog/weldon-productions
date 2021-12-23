@@ -109,7 +109,29 @@ if ( have_posts() ) {
 										</div>
 										<div class="work__job-mask"></div>
 										<div class="work__job-modal">
-											<h3><?= get_field('title', $job); ?></h3>
+											<div class="single-job">
+												<span class="work__job-modal-close"></span>
+												<div class="single-job__image">
+													<img src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+												</div>
+												<div class="single-job__copy">
+													<h3><?= get_field('title', $job); ?></h3>
+													<p><?= get_field('description', $job); ?></p>
+													<?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
+														<div class="single-job__links">
+															<?php if(get_field('link_1', $job)): ?>
+																<a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
+															<?php endif; ?>
+															<?php if(get_field('link_2', $job)): ?>
+																<a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
+															<?php endif; ?>
+															<?php if(get_field('link_3', $job)): ?>
+																<a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
+															<?php endif; ?>
+														</div>
+													<?php endif; ?>
+												</div>
+											</div>
 										</div>
 									</div>
 								<?php endforeach;
@@ -155,7 +177,28 @@ if ( have_posts() ) {
 										</div>
 										<div class="work__job-mask"></div>
 										<div class="work__job-modal">
-											<h3><?= get_field('title', $job); ?></h3>
+											<div class="work__job single-job">
+												<div class="single-job__image">
+													<img src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+												</div>
+												<div class="single-job__copy">
+													<h3><?= get_field('title', $job); ?></h3>
+													<p><?= get_field('description', $job); ?></p>
+													<?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
+														<div class="single-job__links">
+															<?php if(get_field('link_1', $job)): ?>
+																<a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
+															<?php endif; ?>
+															<?php if(get_field('link_2', $job)): ?>
+																<a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
+															<?php endif; ?>
+															<?php if(get_field('link_3', $job)): ?>
+																<a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
+															<?php endif; ?>
+														</div>
+													<?php endif; ?>
+												</div>
+											</div>
 										</div>
 									</div>
 								<?php endforeach;
