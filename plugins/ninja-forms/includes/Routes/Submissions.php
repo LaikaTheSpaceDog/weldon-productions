@@ -590,6 +590,7 @@ final class NF_Routes_Submissions extends NF_Abstracts_Routes
         $updated_option = $option;
         $updated_option[$form_id][$setting] = $new_data;
 
+        $response = (object)[];
         if ( false !== $option ) {
             // option exist
             if ( $current_setting_value === $new_data ) {

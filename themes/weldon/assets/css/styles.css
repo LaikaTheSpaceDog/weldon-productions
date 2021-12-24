@@ -1854,6 +1854,7 @@ div.mce-toolbar-grp, .html-active .switch-html, .tmce-active .switch-tmce {
 
 .l-footer {
   margin: 30px 0;
+  padding-bottom: 30px;
 }
 .l-footer .h4 {
   padding-bottom: 20px;
@@ -2248,7 +2249,7 @@ h4, .h4 {
 }
 
 .about-me {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .about-me .about-me__inner {
   display: flex;
@@ -2298,7 +2299,7 @@ h4, .h4 {
 }
 
 .work {
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 .work .work__inner {
   display: flex;
@@ -2404,7 +2405,6 @@ h4, .h4 {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  margin-bottom: 60px;
   display: flex;
   justify-content: center;
   align-items: center;

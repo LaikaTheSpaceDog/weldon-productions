@@ -667,7 +667,7 @@ final class NF_Admin_Menus_Submissions extends NF_Abstracts_Submenu
 	 */
 	public function enqueue_scripts( $page ) {
 		// let's check and make sure we're on the submissions page.
-		if( isset( $page ) && "ninja-forms_page_nf-submissions" === $page ) {
+		if( isset( $page ) && substr( $page, -strlen( "_page_nf-submissions" ) ) === "_page_nf-submissions") {
             
 			wp_enqueue_style( 'nf-admin-settings', Ninja_Forms::$url . 'assets/css/admin-settings.css', ['wp-components'] );
 			wp_register_script( 'ninja_forms_admin_submissions', Ninja_Forms::$url . 'assets/js/admin-submissions.js', array( 'jquery' ), false, true );
