@@ -1,0 +1,10 @@
+languages/
+update/
+debug.log
+*_Resources/
+*cache
+*node_modules/
+*uploads/
+*/package.json
+wflogs/
+.DS_Store

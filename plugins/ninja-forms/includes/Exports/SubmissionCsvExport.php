@@ -86,6 +86,7 @@ class NF_Exports_SubmissionCsvExport implements SubmissionCsvExportInterface {
      */
     public function handle()/* :string*/
     {
+
         $this->constructLabels();
 
         $this->csvValuesCollection[0][0] = $this->csvLabels;
@@ -314,10 +315,12 @@ class NF_Exports_SubmissionCsvExport implements SubmissionCsvExportInterface {
      */
     public function setSubmissionAggregateCsvExportAdapter(SubmissionAggregateCsvExportAdapter $submissionAggregateCsvExportAdapter)/* :SubmissionCsvExportInterface */
     {
+        $this->setDateFormat();
+        
         $this->submissionAggregateCsvExportAdapter = $submissionAggregateCsvExportAdapter;
 
         $this->submissionAggregateCsvExportAdapter->setHiddenFieldTypes([
-            'html', 'submit'
+            'html', 'submit', 'divider', 'hr', 'note', 'unknown', 'button', 'confirm'
         ]);
         
         $this->fieldLabels = $this->submissionAggregateCsvExportAdapter->getLabels($this->useAdminLabels);
@@ -345,8 +348,23 @@ class NF_Exports_SubmissionCsvExport implements SubmissionCsvExportInterface {
      * @param string $dateFormat
      * @return SubmissionCsvExportInterface
      */
-    public function setDateFormat(/* string */$dateFormat)/* :SubmissionCsvExportInterface */ {
-        $this->dateFormat = $dateFormat;
+    public function setDateFormat(/* string */$dateFormat = null)/* :SubmissionCsvExportInterface */ {
+        if(!empty($dateFormat)) {
+            //Set new date format
+            $date_format = $dateFormat;
+        } else if( !empty( Ninja_Forms()->get_setting( 'date_format' ) ) ) {
+            //Or get NF Date format set
+            $date_format = Ninja_Forms()->get_setting( 'date_format' );
+        } else if(!empty( get_option('date_format'))) {
+            //Or get WP date format set
+            $date_format =  get_option('date_format');
+        } else {
+            //Or leave default
+            $date_format = $this->dateFormat;
+        }
+        
+        $this->dateFormat = $date_format;
+
         return $this;
     }
 
