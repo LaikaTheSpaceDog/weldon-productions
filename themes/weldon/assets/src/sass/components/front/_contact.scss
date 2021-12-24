@@ -43,6 +43,22 @@
                         }
                     }
                 }
+
+                .nf-error.field-wrap .nf-field-element::after {
+                    background: $brand-pink;
+                }
+
+                .nf-error .ninja-forms-field {
+                    border-color: $brand-pink;
+                }
+
+                .nf-error .nf-error-msg {
+                    color: $brand-pink;
+                }
+
+                .nf-pass.field-wrap .nf-field-element::after {
+                    color: $brand-green-med;
+                }
             }
         }
         .contact__right {
