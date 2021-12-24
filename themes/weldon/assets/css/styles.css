@@ -2312,6 +2312,18 @@ h4, .h4 {
   background: #f06578;
   color: #f8f7f5;
 }
+.contact .contact__inner .contact__left .nf-form-cont .nf-error.field-wrap .nf-field-element::after {
+  background: #f06578;
+}
+.contact .contact__inner .contact__left .nf-form-cont .nf-error .ninja-forms-field {
+  border-color: #f06578;
+}
+.contact .contact__inner .contact__left .nf-form-cont .nf-error .nf-error-msg {
+  color: #f06578;
+}
+.contact .contact__inner .contact__left .nf-form-cont .nf-pass.field-wrap .nf-field-element::after {
+  color: #224541;
+}
 .contact .contact__inner .contact__right {
   padding-left: 20px;
 }
