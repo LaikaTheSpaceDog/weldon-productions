@@ -20,11 +20,29 @@
                     resize: none;
                 }
 
-                // .submit-wrap {
-                //     input {
+                .ninja-forms-field:not([type="button"]) {
+                    border: none;
+                    border-bottom: 1px solid $colour-text-body;
+                    background: $main-background;
+                    color: $brand-green-light;
+                }
 
-                //     }
-                // }
+                .ninja-forms-req-symbol {
+                    color: $brand-pink;
+                }
+
+                .submit-wrap {
+                    input {
+                        background: $colour-text-body;
+                        color:$brand-white;
+                        cursor: pointer;
+
+                        &:hover {
+                            background: $brand-pink;
+                            color:$brand-white;
+                        }
+                    }
+                }
             }
         }
         .contact__right {

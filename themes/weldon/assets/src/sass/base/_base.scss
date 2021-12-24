@@ -6,12 +6,12 @@
 
  // Selection colour
  ::-moz-selection {
-   background: $brand-primary;
-   color: $colour-text-body-light;
+   background: $brand-pink;
+   color: $brand-white;
  }
  ::selection {
-   background: $brand-primary;
-   color: $colour-text-body-light;
+   background: $brand-pink;
+   color: $brand-white;
  }
 
 html {

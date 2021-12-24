@@ -11,29 +11,18 @@ $font-beta: "brolimoregular", sans-serif;
 // Box Model
 $box-model: border-box;
 
-// Background and panel colours
-$main-background: #f9f7f5;
-$secondary-background: #f3f5f7;
 
+$brand-pink: #f06578;
+$brand-pink-med: #e698a5;
+$brand-pink-light: #edd1d0;
+$brand-white: #f8f7f5;
+$brand-green-light: #6b8e88;
+$brand-green-med: #224541;
+$brand-green-dark: #191e1a;
 
-// Background block colours
-$black-block: #201f1f;
-$grey-block: #f9f7f7;
-$image-placeholder: #eaeaea;
+$colour-text-body: $brand-green-med;
+$main-background: $brand-white;
 
-//Brand colours
-$brand-primary: #3498db;
-
-// Text colour
-$colour-text-body: #2c4645;
-$colour-text-body-grey: #495e67;
-$secondary-nav-color: #798286;
-$colour-text-body-inactive: #ccc;
-$colour-text-body-light: #fff;
-
-// Gradients
-
-// Shadows
 
 // Z-index depth
 $z-index: (

@@ -2,13 +2,13 @@
 /* Responsive Padding */
 /* Responsive Padding */
 ::-moz-selection {
-  background: #3498db;
-  color: #fff;
+  background: #f06578;
+  color: #f8f7f5;
 }
 
 ::selection {
-  background: #3498db;
-  color: #fff;
+  background: #f06578;
+  color: #f8f7f5;
 }
 
 html {
@@ -20,8 +20,8 @@ body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  color: #2c4645;
-  background-color: #f9f7f5;
+  color: #224541;
+  background-color: #f8f7f5;
   width: 100%;
   margin: 0;
   overflow-x: hidden;
@@ -90,7 +90,7 @@ p {
 .ham,
 .select2-container {
     text-decoration: none;
-    color: #2c4645;
+    color: #224541;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -123,7 +123,7 @@ ul, ol {
 }
 
 a {
-  color: #2c4645;
+  color: #224541;
 }
 
 h1, h2, h3, p {
@@ -188,7 +188,7 @@ strong {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #f9f7f5;
+  background-color: #f8f7f5;
   transition: transform 0.7s cubic-bezier(0.7, 0, 0.3, 1);
   z-index: 2;
 }
@@ -1849,7 +1849,7 @@ div.mce-toolbar-grp, .html-active .switch-html, .tmce-active .switch-tmce {
 }
 .l-header .nav .menu-item a {
   text-decoration: none;
-  color: #f9f7f5;
+  color: #f8f7f5;
 }
 
 .l-footer {
@@ -2294,6 +2294,24 @@ h4, .h4 {
 .contact .contact__inner .contact__left .nf-form-cont textarea {
   resize: none;
 }
+.contact .contact__inner .contact__left .nf-form-cont .ninja-forms-field:not([type=button]) {
+  border: none;
+  border-bottom: 1px solid #224541;
+  background: #f8f7f5;
+  color: #6b8e88;
+}
+.contact .contact__inner .contact__left .nf-form-cont .ninja-forms-req-symbol {
+  color: #f06578;
+}
+.contact .contact__inner .contact__left .nf-form-cont .submit-wrap input {
+  background: #224541;
+  color: #f8f7f5;
+  cursor: pointer;
+}
+.contact .contact__inner .contact__left .nf-form-cont .submit-wrap input:hover {
+  background: #f06578;
+  color: #f8f7f5;
+}
 .contact .contact__inner .contact__right {
   padding-left: 20px;
 }
@@ -2340,7 +2358,7 @@ h4, .h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f9f7f5;
+  background-color: #f8f7f5;
   opacity: 0.7;
   display: none;
   z-index: 2;
@@ -2349,7 +2367,7 @@ h4, .h4 {
   opacity: 1;
   display: none;
   z-index: 3;
-  background-color: #f9f7f5;
+  background-color: #f8f7f5;
   width: 80%;
   position: fixed;
   left: 50%;
