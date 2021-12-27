@@ -135,8 +135,31 @@ function register_jobs_post_type() {
 	  'exclude_from_search'   => false,
 	  'publicly_queryable'    => true,
 	  'capability_type'       => 'page',
-		'rewrite'               => array('slug' => 'jobs'),
+	  'rewrite'               => array('slug' => 'jobs'),
+	  'menu_icon'             => 'dashicons-tickets-alt'
 	);
 	register_post_type( 'jobs', $args );
 }
 add_action( 'init', 'register_jobs_post_type', 0 );
+
+function post_remove () { 
+   remove_menu_page('edit.php');
+}
+add_action('admin_menu', 'post_remove');
+
+add_action( 'admin_menu', 'my_remove_admin_menus' );
+function my_remove_admin_menus() {
+    remove_menu_page( 'edit-comments.php' );
+}
+add_action('init', 'remove_comment_support', 100);
+
+function remove_comment_support() {
+    remove_post_type_support( 'post', 'comments' );
+    remove_post_type_support( 'page', 'comments' );
+}
+
+function mytheme_admin_bar_render() {
+    global $wp_admin_bar;
+    $wp_admin_bar->remove_menu('comments');
+}
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
