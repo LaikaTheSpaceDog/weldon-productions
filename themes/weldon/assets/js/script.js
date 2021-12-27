@@ -19,6 +19,16 @@ jQuery(function($) {
                     $('body').css('width', 'calc(100% - ' + scrollWidth + 'px)');
                     $('body').addClass('no-scroll');
                     $(event.currentTarget).addClass('active');
+                    if($(event.currentTarget).find('.single-job__gallery.modal-gallery').length > 0){
+                        $(event.currentTarget).find('.single-job__gallery.modal-gallery').slick({
+                            autoplay: true,
+                            autoplaySpeed: 5000,
+                            infinite: true,
+                            fade: true,
+                            prevArrow:  $(event.currentTarget).find('.modal-controls .single-job__controls-prev'),
+                            nextArrow:  $(event.currentTarget).find('.modal-controls .single-job__controls-next'),
+                        });
+                    }
                 }
             });
 
@@ -29,6 +39,7 @@ jQuery(function($) {
                 setTimeout(function(){
                     $(event.currentTarget).parents('.has_modal').removeClass('active');
                 },1000);
+                $(event.currentTarget).parents('.has_modal').find('.single-job__gallery.modal-gallery').slick('unslick');
             })
         }
     }
@@ -49,14 +60,25 @@ jQuery(function($) {
     }
 
     function jobsSliders(){
-        if($('#current-work .single-job__gallery').length > 0){
-            $('#current-work .single-job__gallery').slick({
+        if($('#current-work .single-job__gallery:not(.modal-gallery)').length > 0){
+            $('#current-work .single-job__gallery:not(.modal-gallery)').slick({
                 autoplay: true,
                 autoplaySpeed: 5000,
                 infinite: true,
                 fade: true,
-                prevArrow: $('.single-job__controls-prev'),
-                nextArrow: $('.single-job__controls-next')
+                prevArrow: $('#current-work .single-job__controls-prev'),
+                nextArrow: $('#current-work .single-job__controls-next')
+            });
+        }
+
+        if($('#previous-work .single-job__gallery:not(.modal-gallery)').length > 0){
+            $('#previous-work .single-job__gallery:not(.modal-gallery)').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                infinite: true,
+                fade: true,
+                prevArrow: $('#previous-work .single-job__controls-prev'),
+                nextArrow: $('#previous-work .single-job__controls-next')
             });
         }
     }
