@@ -7,6 +7,7 @@ jQuery(function($) {
         heroPos();
         modalToggle();
         headerNav();
+        jobsSliders();
     });
 
     function modalToggle(){
@@ -45,5 +46,18 @@ jQuery(function($) {
                 scrollTop: $(id).offset().top - 20
             }, 1000, 'easeInOutCubic');
         })
+    }
+
+    function jobsSliders(){
+        if($('#current-work .single-job__gallery').length > 0){
+            $('#current-work .single-job__gallery').slick({
+                autoplay: true,
+                autoplaySpeed: 5000,
+                infinite: true,
+                fade: true,
+                prevArrow: $('.single-job__controls-prev'),
+                nextArrow: $('.single-job__controls-next')
+            });
+        }
     }
 })
