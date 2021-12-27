@@ -31,17 +31,16 @@ jQuery(function($) {
                         });
                     }
                 }
+                $('.work__job-modal-close').click(function(event){
+                    $(event.currentTarget).parents('.has_modal').find('.work__job-modal, .work__job-mask').fadeOut();
+                    $('body').removeClass('no-scroll');
+                    $('body').css('width', 'auto');
+                    $(event.currentTarget).parents('.has_modal').find('.single-job__gallery.modal-gallery').slick('unslick');
+                    setTimeout(function(){
+                        $(event.currentTarget).parents('.has_modal').removeClass('active');
+                    },500);
+                });
             });
-
-            $('.work__job-modal-close').click(function(event){
-                $(event.currentTarget).parents('.has_modal').find('.work__job-modal, .work__job-mask').fadeOut();
-                $('body').removeClass('no-scroll');
-                $('body').css('width', 'auto');
-                setTimeout(function(){
-                    $(event.currentTarget).parents('.has_modal').removeClass('active');
-                },1000);
-                $(event.currentTarget).parents('.has_modal').find('.single-job__gallery.modal-gallery').slick('unslick');
-            })
         }
     }
 
