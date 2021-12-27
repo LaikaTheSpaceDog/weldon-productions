@@ -135,10 +135,28 @@ if ( have_posts() ) {
 										<div class="work__job-mask"></div>
 										<div class="work__job-modal">
 											<div class="single-job">
-												<span class="work__job-modal-close"></span>
-												<div class="single-job__image">
-													<img src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
-												</div>
+												<?php if(!get_field('additional_image_1', $job) && !get_field('additional_image_2', $job) && !get_field('additional_image_3', $job)): ?>
+													<div class="single-job__image">
+														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+													</div>
+												<?php else: ?>
+													<div class="single-job__gallery modal-gallery">
+														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+														<?php if(get_field('additional_image_1', $job)): ?>
+															<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
+														<?php endif; ?>
+														<?php if(get_field('additional_image_2', $job)): ?>
+															<img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
+														<?php endif; ?>
+														<?php if(get_field('additional_image_3', $job)): ?>
+															<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
+														<?php endif; ?>
+													</div>
+													<div class="single-job__controls modal-controls">
+														<span class="single-job__controls-prev"></span>
+														<span class="single-job__controls-next"></span>
+													</div>
+												<?php endif; ?>
 												<div class="single-job__copy">
 													<h3><?= get_field('title', $job); ?></h3>
 													<p><?= get_field('description', $job); ?></p>
@@ -223,9 +241,28 @@ if ( have_posts() ) {
 										<div class="work__job-modal">
 											<div class="work__job single-job">
 												<span class="work__job-modal-close"></span>
-												<div class="single-job__image">
-													<img src="<?= get_field('feature_image', $job)['url']; ?>" data-src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
-												</div>
+												<?php if(!get_field('additional_image_1', $job) && !get_field('additional_image_2', $job) && !get_field('additional_image_3', $job)): ?>
+													<div class="single-job__image">
+														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+													</div>
+												<?php else: ?>
+													<div class="single-job__gallery modal-gallery">
+														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
+														<?php if(get_field('additional_image_1', $job)): ?>
+															<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
+														<?php endif; ?>
+														<?php if(get_field('additional_image_2', $job)): ?>
+															<img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
+														<?php endif; ?>
+														<?php if(get_field('additional_image_3', $job)): ?>
+															<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
+														<?php endif; ?>
+													</div>
+													<div class="single-job__controls modal-controls">
+														<span class="single-job__controls-prev"></span>
+														<span class="single-job__controls-next"></span>
+													</div>
+												<?php endif; ?>
 												<div class="single-job__copy">
 													<h3><?= get_field('title', $job); ?></h3>
 													<p><?= get_field('description', $job); ?></p>

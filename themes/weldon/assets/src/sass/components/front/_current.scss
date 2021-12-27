@@ -82,7 +82,7 @@
         .single-job {
             display: flex;
             flex-direction: row;
-            cursor: default;
+            cursor: default !important;
             position: relative;
 
             .single-job__image, .single-job__gallery {
@@ -135,6 +135,7 @@
                     background-position: center;
                     background-size: 40px 40px;
                     background-repeat: no-repeat;
+                    cursor: pointer;
 
                     &.single-job__controls-prev {
                         background-image: url(/wp-content/themes/weldon/assets/img/icons/line-angle-left.svg);
