@@ -9,6 +9,7 @@ jQuery(function($) {
         jobsSliders();
         logoFade();
         heroPos();
+        fourohfourHeight();
     });
 
     function modalToggle(){
@@ -85,8 +86,9 @@ jQuery(function($) {
     }
 
     function logoFade(){
+        $('.l-header').addClass('visible');
+
         if($('.hero .hero__logo').length > 0){
-            $('.l-header').addClass('visible');
             $('.hero .hero__logo').addClass('visible');
         }
     }
