@@ -4,10 +4,11 @@ jQuery(function($) {
             // Options
         });
 
-        heroPos();
         modalToggle();
         headerNav();
         jobsSliders();
+        logoFade();
+        heroPos();
     });
 
     function modalToggle(){
@@ -82,4 +83,11 @@ jQuery(function($) {
             });
         }
     }
-})
+
+    function logoFade(){
+        if($('.hero .hero__logo').length > 0){
+            $('.l-header').addClass('visible');
+            $('.hero .hero__logo').addClass('visible');
+        }
+    }
+});

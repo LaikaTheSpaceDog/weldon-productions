@@ -45,7 +45,7 @@ if ( have_posts() ) {
 		?>
 		<main>
 			<div class="hero" style="background-image:url(<?= $hero['url']; ?>)">
-				<img src="/wp-content/themes/weldon/assets/img/logos/logo-<?= $logo_color ?>.png" alt="Zoe Weldon Productions logo" draggable="false" />
+				<img class="hero__logo" src="/wp-content/themes/weldon/assets/img/logos/logo-<?= $logo_color ?>.png" alt="Zoe Weldon Productions logo" draggable="false" />
 			</div>
 			<div class="section__constrained">
 				<div class="main-content">

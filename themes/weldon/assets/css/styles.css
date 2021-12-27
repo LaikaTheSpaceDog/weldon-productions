@@ -1834,8 +1834,13 @@ div.mce-toolbar-grp, .html-active .switch-html, .tmce-active .switch-tmce {
   max-width: 1240px;
 }
 .l-header {
-  z-index: 100;
+  z-index: 1000;
   position: relative;
+  opacity: 0;
+  transition: opacity 1500ms ease-in-out;
+}
+.l-header.visible {
+  opacity: 1;
 }
 .l-header .nav {
   display: flex;
@@ -2485,6 +2490,11 @@ h4, .h4 {
   align-items: center;
   position: relative;
 }
-.hero img {
+.hero .hero__logo {
   height: 75%;
+  opacity: 0;
+  transition: opacity 1500ms ease-in-out;
+}
+.hero .hero__logo.visible {
+  opacity: 1;
 }

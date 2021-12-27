@@ -21,12 +21,5 @@
 			wp_nav_menu($args);
 			?>
 		</nav>
-		<div id="js-brg" class="l-header__brg btn--brg" role="button">
-			<span></span>
-			<span></span>
-			<span></span>
-		</div>
-
 	</div>
-
 </header>
