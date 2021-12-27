@@ -1,0 +1,12 @@
+.error404 {
+    .section__constrained {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h1, h2, a {
+            text-align: center;
+        }
+    }
+}

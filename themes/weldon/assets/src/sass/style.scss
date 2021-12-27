@@ -11,23 +11,15 @@
 @import "base/base";
 @import "base/fonts";
 
-// Vendors: Third-party css
-@import "vendor/purecss/base";
-@import "vendor/purecss/grids";
-@import "vendor/purecss/grids-responsive";
-@import "vendor/animate/animate";
-
 // Layout: Major sections (l- prefix)
 @import "layout/admin-bar";
 @import "layout/constrained";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/headings";
+@import "layout/fourohfour";
 
 // Components: Reusable modules or widgets
-@import "components/buttons/buttons";
-@import "components/sliders/sliders";
-@import "components/modal/modal";
 @import "components/front/about-me";
 @import "components/front/contact";
 @import "components/front/current";
