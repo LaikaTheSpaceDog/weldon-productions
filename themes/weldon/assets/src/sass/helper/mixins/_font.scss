@@ -5,6 +5,8 @@
 // ==============================
 
 //  default font scale bounding
+@use 'sass:math';
+
 $font-lock-min:  360px !default;
 $font-lock-max: 1650px !default;
 
@@ -84,5 +86,6 @@ $font-lock-max: 1650px !default;
 
 //  strip units helper function
 @function num($input){
-  @return $input/($input * 0 + 1);
+  // @return $input/($input * 0 + 1);
+  @return math.div($input, $input * 0 + 1);
 }
