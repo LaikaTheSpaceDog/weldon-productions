@@ -9,7 +9,13 @@
     align-items: center;
     position: relative;
 
-    img {
+    .hero__logo {
         height: 75%;
+        opacity: 0;
+        transition: opacity 1500ms ease-in-out;
+
+        &.visible {
+            opacity: 1;
+        }
     }
 }

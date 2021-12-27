@@ -1,6 +1,13 @@
 .l-header {
-    z-index: 100;
+    z-index: 1000;
     position: relative;
+    opacity: 0;
+    transition: opacity 1500ms ease-in-out;
+
+    &.visible {
+        opacity: 1;
+    }
+
     .nav {
         display: flex;
         justify-content: center;
