@@ -1079,3 +1079,17 @@ h4, .h4 {
 .hero .hero__logo.visible {
   opacity: 1;
 }
+
+.link {
+  font-weight: 500;
+  padding: 5px 0;
+  margin: 0 25px;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.link:first-of-type {
+  margin-left: 0;
+}
