@@ -991,7 +991,12 @@ h4, .h4 {
 .work .work__inner .work__job {
   display: flex;
   flex-direction: column;
-  min-width: calc(33.33% - 13.33px);
+  width: 100%;
+}
+@media (min-width: 1008px) {
+  .work .work__inner .work__job {
+    min-width: calc(33.33% - 13.33px);
+  }
 }
 .work .work__inner .work__job:not(.active) {
   cursor: pointer;
@@ -1014,6 +1019,11 @@ h4, .h4 {
 .work .work__inner .work__job .work__job-copy {
   text-align: center;
   margin-top: 10px;
+}
+@media (max-width: 1007px) {
+  .work .work__inner .work__job .work__job-copy h3 {
+    padding-bottom: 0;
+  }
 }
 .work .work__inner .work__job .work__job-mask {
   position: fixed;

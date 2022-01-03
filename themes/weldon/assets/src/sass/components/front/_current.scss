@@ -9,7 +9,11 @@
         .work__job {
             display: flex;
             flex-direction: column;
-            min-width: calc(33.33% - 13.33px);
+            width: 100%;
+
+            @include mediaMin($main){
+                min-width: calc(33.33% - 13.33px);
+            }
 
             &:not(.active){
                 cursor: pointer;
@@ -35,6 +39,12 @@
             .work__job-copy {
                 text-align: center;
                 margin-top: 10px;
+
+                h3 {
+                    @include mediaMax($main){
+                        padding-bottom: 0;
+                    }
+                }
             }
 
             .work__job-mask {
