@@ -1,15 +1,27 @@
 .contact {
     .contact__inner {
         display: flex;
+        flex-direction: column;
+
+        @include mediaMin($main){
+            flex-direction: row;
+        }
 
         .contact__left, .contact__right {
-            width: 50%;
-            max-width: 50%;
             display: flex;
             flex-direction: column;
+
+            @include mediaMin($main){
+                width: 50%;
+                max-width: 50%;
+            }
         }
         .contact__left {
-            padding-right: 20px;
+            order: 2;
+            @include mediaMin($main){
+                padding-right: 20px;
+                order: 1;
+            }
 
             .nf-form-cont {
                 .nf-form-fields-required {
@@ -36,6 +48,11 @@
                         background: $colour-text-body;
                         color:$brand-white;
                         cursor: pointer;
+                        width: 100%;
+
+                        @include mediaMin($main){
+                            width: auto;
+                        }
 
                         &:hover {
                             background: $brand-pink;
@@ -62,7 +79,11 @@
             }
         }
         .contact__right {
-            padding-left: 20px;
+            order: 1;
+            @include mediaMin($main){
+                order: 2;
+                padding-left: 20px;
+            }
         }
     }
 }

@@ -901,15 +901,31 @@ h4, .h4 {
 
 .contact .contact__inner {
   display: flex;
+  flex-direction: column;
+}
+@media (min-width: 1008px) {
+  .contact .contact__inner {
+    flex-direction: row;
+  }
 }
 .contact .contact__inner .contact__left, .contact .contact__inner .contact__right {
-  width: 50%;
-  max-width: 50%;
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 1008px) {
+  .contact .contact__inner .contact__left, .contact .contact__inner .contact__right {
+    width: 50%;
+    max-width: 50%;
+  }
+}
 .contact .contact__inner .contact__left {
-  padding-right: 20px;
+  order: 2;
+}
+@media (min-width: 1008px) {
+  .contact .contact__inner .contact__left {
+    padding-right: 20px;
+    order: 1;
+  }
 }
 .contact .contact__inner .contact__left .nf-form-cont .nf-form-fields-required {
   display: none;
@@ -930,6 +946,12 @@ h4, .h4 {
   background: #224541;
   color: #f8f7f5;
   cursor: pointer;
+  width: 100%;
+}
+@media (min-width: 1008px) {
+  .contact .contact__inner .contact__left .nf-form-cont .submit-wrap input {
+    width: auto;
+  }
 }
 .contact .contact__inner .contact__left .nf-form-cont .submit-wrap input:hover {
   background: #f06578;
@@ -948,7 +970,13 @@ h4, .h4 {
   color: #224541;
 }
 .contact .contact__inner .contact__right {
-  padding-left: 20px;
+  order: 1;
+}
+@media (min-width: 1008px) {
+  .contact .contact__inner .contact__right {
+    order: 2;
+    padding-left: 20px;
+  }
 }
 
 .work {
