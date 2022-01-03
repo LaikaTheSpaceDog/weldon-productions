@@ -3,30 +3,57 @@
     
     .about-me__inner {
         display: flex;
+        flex-direction: column;
+
+        @include mediaMin($main){
+            flex-direction: row;
+        }
 
         .about-me__left, .about-me__right {
-            width: 50%;
-            max-width: 50%;
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            @include mediaMin($main){
+                width: 50%;
+                max-width: 50%;
+            }
 
             img {
                 width: 100%;
                 max-height: 500px;
                 object-fit: cover;
+                margin-bottom: 20px;
+
+                @include mediaMin($main){
+                    margin-bottom: 0;
+                }
             }
         }
 
         .about-me__left {
-            padding-right: 20px;
+            @include mediaMin($main){
+                padding-right: 20px;
+            }
         }
         .about-me__right {
-            padding-left: 20px;
+            @include mediaMin($main){
+                padding-left: 20px;
+            }
 
             .about-me__links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                @include mediaMin($main){
+                    justify-content: flex-start;
+                }
+
                 a:first-of-type {
-                    padding-left: 0;
+                    @include mediaMin($main){
+                        padding-left: 0;
+                    }
                 }
             }
         }

@@ -9,5 +9,7 @@
   }
   
 .link:first-of-type {
-    margin-left: 0;
+    @include mediaMin($main){
+        margin-left: 0;
+    }
 }  
