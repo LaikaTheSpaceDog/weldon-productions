@@ -8,11 +8,26 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-bottom: 60px;
+
+    @include mediaMin($main){
+        margin-bottom: 0;
+    }
+
+    @include mediaMax($main){
+        top: 0 !important;
+    }
 
     .hero__logo {
-        height: 75%;
         opacity: 0;
         transition: opacity 1500ms ease-in-out;
+        height: auto;
+        width: 100%;
+
+        @include mediaMin($main){
+            height: 75%;
+            width: auto;
+        }
 
         &.visible {
             opacity: 1;
