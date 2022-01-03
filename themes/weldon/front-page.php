@@ -240,7 +240,7 @@ if ( have_posts() ) {
 										<div class="work__job-mask"></div>
 										<div class="work__job-modal">
 											<div class="work__job single-job">
-												<span class="work__job-modal-close"></span>
+												<span class="work__job-modal-close">Close</span>
 												<?php if(!get_field('additional_image_1', $job) && !get_field('additional_image_2', $job) && !get_field('additional_image_3', $job)): ?>
 													<div class="single-job__image">
 														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />

@@ -13,6 +13,7 @@
 
             @include mediaMin($main){
                 min-width: calc(33.33% - 13.33px);
+                width: calc(33.33% - 13.33px);
             }
 
             &:not(.active){
@@ -64,45 +65,73 @@
                 display: none;
                 z-index: 3;
                 background-color: $main-background;
-                width: 80%;
+                width: 90%;
                 position: fixed;
                 left: 50%;
                 top: 50%;
                 transform: translate(-50%, -50%);
                 box-shadow: 0px 12px 40px #00000029;
-                padding: 20px;
+                padding: 40px 20px;
                 border-radius: 5px;
                 overflow: hidden;
+                height: 90vh;
+
+                @include mediaMin($main){
+                    width: 80%;
+                    padding: 20px;
+                    height: auto;
+                }
 
                 .work__job-modal-close {
                     position: absolute;
-                    right: 20px;
-                    top: 20px;
-                    width: 20px;
-                    height: 20px;
-                    background-image: url(/wp-content/themes/weldon/assets/img/icons/close-line.svg);
-                    font-size: 20px;
+                    right: 50%;
+                    top: -32.5px;
+                    font-size: 16px;
                     content: "";
                     background-size: contain;
                     cursor: pointer;
+                    transform: translateX(50%);
+
+                    @include mediaMin($main){
+                        right: 20px;
+                        top: 20px;
+                        width: 20px;
+                        height: 20px;
+                        transform: translateX(0%);
+                        width: 15px;
+                        height: 15px;
+                        background-image: url(/wp-content/themes/weldon/assets/img/icons/close-line.svg);
+                        color: transparent;
+                    }
                 }
             }
         }
 
         .single-job {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             cursor: default !important;
             position: relative;
 
+            @include mediaMin($main){
+                flex-direction: row;
+                width: 100%;
+            }
+
             .single-job__image, .single-job__gallery {
-                width: 50%;
-                max-width: 50%;
-                margin-right: 20px;
                 height: 0;
-                padding-top: calc(2 / 3 * 50%);
+                padding-top: calc(2 / 3 * 100%);
                 overflow: hidden;
                 position: relative;
+                margin-bottom: 20px;
+
+                @include mediaMin($main){
+                    width: 50%;
+                    max-width: 50%;
+                    margin-right: 20px;
+                    padding-top: calc(2 / 3 * 50%);
+                    margin-bottom: 0;
+                }
 
                 .slick-list {
                     position: absolute;
@@ -130,11 +159,15 @@
             }
 
             .single-job__controls {
-                display: flex;
                 position: absolute;
                 bottom: 0;
                 right: calc(50% + 20px);
                 z-index: 1000;
+                display: none;
+                
+                @include mediaMin($main){
+                    display: flex;
+                }
 
                 span {
                     display: block;
@@ -158,12 +191,25 @@
             }
 
             .single-job__copy {
-                width: 50%;
-                max-width: 50%;
-                margin-left: 20px;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
+                overflow-y: scroll;
+
+                @include mediaMin($main){
+                    width: 50%;
+                    max-width: 50%;
+                    margin-left: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    overflow-y: hidden;
+                }
+
+                .single-job__links {
+                    @include mediaMax($main){
+                        display: flex;
+                        justify-content: center;
+                        flex-wrap: wrap;
+                    }
+                }
             }
         }
 
