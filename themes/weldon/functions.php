@@ -165,3 +165,5 @@ function mytheme_admin_bar_render() {
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
 
 add_theme_support( 'title-tag' );
+
+add_theme_support( 'menus' );
