@@ -167,3 +167,8 @@ add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
 add_theme_support( 'title-tag' );
 
 add_theme_support( 'menus' );
+
+register_nav_menus( array(
+    'header'   => 'Display this menu in header',
+    'footer'   => 'Display this menu in footer',
+));
