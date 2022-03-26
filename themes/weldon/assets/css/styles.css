@@ -1010,7 +1010,7 @@ h4, .h4 {
 .work .work__inner .work__job .work__job-image {
   width: 100%;
   height: 0;
-  padding-top: 66.6666666667%;
+  padding-top: 100%;
   overflow: hidden;
   position: relative;
 }

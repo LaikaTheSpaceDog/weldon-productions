@@ -88,7 +88,6 @@ if ( have_posts() ) {
 											</div>
 										<?php else: ?>
 											<div class="single-job__gallery">
-												<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 												<?php if(get_field('additional_image_1', $job)): ?>
 													<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
 												<?php endif; ?>
@@ -97,6 +96,12 @@ if ( have_posts() ) {
 												<?php endif; ?>
 												<?php if(get_field('additional_image_3', $job)): ?>
 													<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
+												<?php endif; ?>
+                                                <?php if(get_field('additional_image_4', $job)): ?>
+													<img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+												<?php endif; ?>
+                                                <?php if(get_field('additional_image_5', $job)): ?>
+													<img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
 												<?php endif; ?>
 											</div>
 											<div class="single-job__controls">
@@ -141,7 +146,6 @@ if ( have_posts() ) {
 													</div>
 												<?php else: ?>
 													<div class="single-job__gallery modal-gallery">
-														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 														<?php if(get_field('additional_image_1', $job)): ?>
 															<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
 														<?php endif; ?>
@@ -151,6 +155,12 @@ if ( have_posts() ) {
 														<?php if(get_field('additional_image_3', $job)): ?>
 															<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
 														<?php endif; ?>
+                                                        <?php if(get_field('additional_image_4', $job)): ?>
+                                                            <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                        <?php endif; ?>
+                                                        <?php if(get_field('additional_image_5', $job)): ?>
+                                                            <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                        <?php endif; ?>
 													</div>
 													<div class="single-job__controls modal-controls">
 														<span class="single-job__controls-prev"></span>
@@ -205,6 +215,12 @@ if ( have_posts() ) {
 												<?php if(get_field('additional_image_3', $job)): ?>
 													<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
 												<?php endif; ?>
+                                                <?php if(get_field('additional_image_4', $job)): ?>
+													<img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+												<?php endif; ?>
+                                                <?php if(get_field('additional_image_5', $job)): ?>
+													<img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+												<?php endif; ?>
 											</div>
 											<div class="single-job__controls">
 												<span class="single-job__controls-prev"></span>
@@ -249,7 +265,6 @@ if ( have_posts() ) {
 													</div>
 												<?php else: ?>
 													<div class="single-job__gallery modal-gallery">
-														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 														<?php if(get_field('additional_image_1', $job)): ?>
 															<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
 														<?php endif; ?>
@@ -259,6 +274,12 @@ if ( have_posts() ) {
 														<?php if(get_field('additional_image_3', $job)): ?>
 															<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
 														<?php endif; ?>
+                                                        <?php if(get_field('additional_image_4', $job)): ?>
+                                                            <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                        <?php endif; ?>
+                                                        <?php if(get_field('additional_image_5', $job)): ?>
+                                                            <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                        <?php endif; ?>
 													</div>
 													<div class="single-job__controls modal-controls">
 														<span class="single-job__controls-prev"></span>
