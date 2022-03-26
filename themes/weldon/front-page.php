@@ -89,20 +89,52 @@ if ( have_posts() ) {
 										<?php else: ?>
 											<div class="single-job__gallery">
 												<?php if(get_field('additional_image_1', $job)): ?>
-													<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
+                                                    <div class="single-job__gallery-image">
+													    <img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_1_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_1_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>
 												<?php endif; ?>
 												<?php if(get_field('additional_image_2', $job)): ?>
-													<img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
-												<?php endif; ?>
+                                                    <div class="single-job__gallery-image">
+													    <img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_2_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_2_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>										<?php endif; ?>
 												<?php if(get_field('additional_image_3', $job)): ?>
-													<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
-												<?php endif; ?>
+                                                    <div class="single-job__gallery-image">
+													    <img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_3_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_3_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>										<?php endif; ?>
                                                 <?php if(get_field('additional_image_4', $job)): ?>
-													<img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
-												<?php endif; ?>
+                                                    <div class="single-job__gallery-image">
+													    <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_4_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_4_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>									<?php endif; ?>
                                                 <?php if(get_field('additional_image_5', $job)): ?>
-													<img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
-												<?php endif; ?>
+                                                    <div class="single-job__gallery-image">
+													    <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_5_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_5_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>										
+                                                <?php endif; ?>
 											</div>
 											<div class="single-job__controls">
 												<span class="single-job__controls-prev"></span>
@@ -140,26 +172,58 @@ if ( have_posts() ) {
 										<div class="work__job-mask"></div>
 										<div class="work__job-modal">
 											<div class="single-job">
-												<?php if(!get_field('additional_image_1', $job) && !get_field('additional_image_2', $job) && !get_field('additional_image_3', $job)): ?>
+												<?php if(!get_field('additional_image_1', $job) && !get_field('additional_image_2', $job) && !get_field('additional_image_3', $job) && !get_field('additional_image_4', $job) && !get_field('additional_image_5', $job)): ?>
 													<div class="single-job__image">
 														<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
 													</div>
 												<?php else: ?>
 													<div class="single-job__gallery modal-gallery">
-														<?php if(get_field('additional_image_1', $job)): ?>
-															<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
-														<?php endif; ?>
-														<?php if(get_field('additional_image_2', $job)): ?>
-															<img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
-														<?php endif; ?>
-														<?php if(get_field('additional_image_3', $job)): ?>
-															<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
-														<?php endif; ?>
-                                                        <?php if(get_field('additional_image_4', $job)): ?>
-                                                            <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                        <?php if(get_field('additional_image_1', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_1_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_1_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>
                                                         <?php endif; ?>
+                                                        <?php if(get_field('additional_image_2', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_2_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_2_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>										<?php endif; ?>
+                                                        <?php if(get_field('additional_image_3', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_3_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_3_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>										<?php endif; ?>
+                                                        <?php if(get_field('additional_image_4', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_4_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_4_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>									<?php endif; ?>
                                                         <?php if(get_field('additional_image_5', $job)): ?>
-                                                            <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_5_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_5_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>										
                                                         <?php endif; ?>
 													</div>
 													<div class="single-job__controls modal-controls">
@@ -205,22 +269,53 @@ if ( have_posts() ) {
 											</div>
 										<?php else: ?>
 											<div class="single-job__gallery">
-												<img src="<?= get_field('feature_image', $job)['url']; ?>" alt="<?= get_field('feature_image', $job)['alt']; ?>" />
-												<?php if(get_field('additional_image_1', $job)): ?>
-													<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
-												<?php endif; ?>
-												<?php if(get_field('additional_image_2', $job)): ?>
-													<img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
-												<?php endif; ?>
-												<?php if(get_field('additional_image_3', $job)): ?>
-													<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
-												<?php endif; ?>
+                                                <?php if(get_field('additional_image_1', $job)): ?>
+                                                    <div class="single-job__gallery-image">
+                                                        <img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_1_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_1_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                <?php endif; ?>
+                                                <?php if(get_field('additional_image_2', $job)): ?>
+                                                    <div class="single-job__gallery-image">
+                                                        <img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_2_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_2_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>										<?php endif; ?>
+                                                <?php if(get_field('additional_image_3', $job)): ?>
+                                                    <div class="single-job__gallery-image">
+                                                        <img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_3_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_3_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>										<?php endif; ?>
                                                 <?php if(get_field('additional_image_4', $job)): ?>
-													<img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
-												<?php endif; ?>
+                                                    <div class="single-job__gallery-image">
+                                                        <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_4_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_4_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>									<?php endif; ?>
                                                 <?php if(get_field('additional_image_5', $job)): ?>
-													<img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
-												<?php endif; ?>
+                                                    <div class="single-job__gallery-image">
+                                                        <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                        <?php if(get_field('gallery_image_5_caption', $job)): ?>
+                                                            <div class="single-job__gallery-image-overlay">
+                                                                <p><?= get_field('gallery_image_5_caption', $job); ?></p>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>										
+                                                <?php endif; ?>
 											</div>
 											<div class="single-job__controls">
 												<span class="single-job__controls-prev"></span>
@@ -265,20 +360,52 @@ if ( have_posts() ) {
 													</div>
 												<?php else: ?>
 													<div class="single-job__gallery modal-gallery">
-														<?php if(get_field('additional_image_1', $job)): ?>
-															<img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
-														<?php endif; ?>
-														<?php if(get_field('additional_image_2', $job)): ?>
-															<img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
-														<?php endif; ?>
-														<?php if(get_field('additional_image_3', $job)): ?>
-															<img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
-														<?php endif; ?>
-                                                        <?php if(get_field('additional_image_4', $job)): ?>
-                                                            <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                        <?php if(get_field('additional_image_1', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_1', $job)['url']; ?>" alt="<?= get_field('additional_image_1', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_1_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_1_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>
                                                         <?php endif; ?>
+                                                        <?php if(get_field('additional_image_2', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_2', $job)['url']; ?>" alt="<?= get_field('additional_image_2', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_2_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_2_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>										<?php endif; ?>
+                                                        <?php if(get_field('additional_image_3', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_3', $job)['url']; ?>" alt="<?= get_field('additional_image_3', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_3_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_3_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>										<?php endif; ?>
+                                                        <?php if(get_field('additional_image_4', $job)): ?>
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_4', $job)['url']; ?>" alt="<?= get_field('additional_image_4', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_4_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_4_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>									<?php endif; ?>
                                                         <?php if(get_field('additional_image_5', $job)): ?>
-                                                            <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                            <div class="single-job__gallery-image">
+                                                                <img src="<?= get_field('additional_image_5', $job)['url']; ?>" alt="<?= get_field('additional_image_5', $job)['alt']; ?>" />
+                                                                <?php if(get_field('gallery_image_5_caption', $job)): ?>
+                                                                    <div class="single-job__gallery-image-overlay">
+                                                                        <p><?= get_field('gallery_image_5_caption', $job); ?></p>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>										
                                                         <?php endif; ?>
 													</div>
 													<div class="single-job__controls modal-controls">
