@@ -44,10 +44,16 @@
             .about-me__links {
                 display: flex;
                 flex-wrap: wrap;
-                justify-content: center;
+                justify-content: space-between;
+                align-items: flex-start;
+                column-gap: 50px;
 
                 @include mediaMin($main){
                     justify-content: flex-start;
+                }
+
+                a {
+                    margin: 0;
                 }
 
                 a:first-of-type {

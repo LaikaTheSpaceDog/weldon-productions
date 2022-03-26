@@ -886,12 +886,17 @@ h4, .h4 {
 .about-me .about-me__inner .about-me__right .about-me__links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  column-gap: 50px;
 }
 @media (min-width: 1008px) {
   .about-me .about-me__inner .about-me__right .about-me__links {
     justify-content: flex-start;
   }
+}
+.about-me .about-me__inner .about-me__right .about-me__links a {
+  margin: 0;
 }
 @media (min-width: 1008px) {
   .about-me .about-me__inner .about-me__right .about-me__links a:first-of-type {
