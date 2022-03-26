@@ -1105,7 +1105,7 @@ h4, .h4 {
   width: calc(100% - 35px);
 }
 .work .work__inner .work__job .work__job-modal .single-job__copy .single-job__copy-body {
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .work .work__inner .single-job {
   display: flex;
