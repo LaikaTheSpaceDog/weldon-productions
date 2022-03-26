@@ -113,6 +113,8 @@
                 }
 
                 .single-job__copy {
+                    min-height: 0;
+
                     h3 {
                         width: calc(100% - 35px);
                     }
@@ -207,13 +209,12 @@
             }
 
             .single-job__copy {
-                overflow-y: scroll;
 
                 @include mediaMin($main){
                     width: 50%;
                     max-width: 50%;
                     margin-left: 20px;
-                    overflow-y: hidden;
+                    overflow-y: scroll;
                 }
 
                 .single-job__links {

@@ -52,11 +52,11 @@
 
                         @include mediaMin($main){
                             width: auto;
-                        }
 
-                        &:hover {
-                            background: $brand-pink;
-                            color:$brand-white;
+                            &:hover {
+                                background: $brand-pink;
+                                color:$brand-white;
+                            }
                         }
                     }
                 }

@@ -957,10 +957,10 @@ h4, .h4 {
   .contact .contact__inner .contact__left .nf-form-cont .submit-wrap input {
     width: auto;
   }
-}
-.contact .contact__inner .contact__left .nf-form-cont .submit-wrap input:hover {
-  background: #ec5b6d;
-  color: #f8f6f4;
+  .contact .contact__inner .contact__left .nf-form-cont .submit-wrap input:hover {
+    background: #ec5b6d;
+    color: #f8f6f4;
+  }
 }
 .contact .contact__inner .contact__left .nf-form-cont .nf-error.field-wrap .nf-field-element::after {
   background: #ec5b6d;
@@ -1098,6 +1098,9 @@ h4, .h4 {
     color: transparent;
   }
 }
+.work .work__inner .work__job .work__job-modal .single-job__copy {
+  min-height: 0;
+}
 .work .work__inner .work__job .work__job-modal .single-job__copy h3 {
   width: calc(100% - 35px);
 }
@@ -1181,15 +1184,12 @@ h4, .h4 {
 .work .work__inner .single-job .single-job__controls span.single-job__controls-next {
   background-image: url(/wp-content/themes/weldon/assets/img/icons/line-angle-right.svg);
 }
-.work .work__inner .single-job .single-job__copy {
-  overflow-y: scroll;
-}
 @media (min-width: 1008px) {
   .work .work__inner .single-job .single-job__copy {
     width: 50%;
     max-width: 50%;
     margin-left: 20px;
-    overflow-y: hidden;
+    overflow-y: scroll;
   }
 }
 @media (max-width: 1007px) {
