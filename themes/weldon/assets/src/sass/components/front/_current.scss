@@ -214,12 +214,16 @@
                     width: 50%;
                     max-width: 50%;
                     margin-left: 20px;
-                    overflow-y: scroll;
                 }
 
                 .single-job__links {
+                    display: flex;
+                    column-gap: 50px;
+                    
+                    a {
+                        margin: 0;
+                    }
                     @include mediaMax($main){
-                        display: flex;
                         justify-content: center;
                         flex-wrap: wrap;
                     }

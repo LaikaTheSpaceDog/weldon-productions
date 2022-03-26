@@ -1189,12 +1189,17 @@ h4, .h4 {
     width: 50%;
     max-width: 50%;
     margin-left: 20px;
-    overflow-y: scroll;
   }
+}
+.work .work__inner .single-job .single-job__copy .single-job__links {
+  display: flex;
+  column-gap: 50px;
+}
+.work .work__inner .single-job .single-job__copy .single-job__links a {
+  margin: 0;
 }
 @media (max-width: 1007px) {
   .work .work__inner .single-job .single-job__copy .single-job__links {
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
