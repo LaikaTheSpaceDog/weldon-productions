@@ -9,7 +9,20 @@ jQuery(function($) {
         jobsSliders();
         logoFade();
         heroPos();
+        controls();
+        singleJobCopyBody();
     });
+
+    $(window).resize(function(){
+        controls();
+    })
+
+    $('.has_modal').click(function(){
+        setTimeout(function(){
+            controls();
+            singleJobCopyBody();
+        },100)
+    })
 
     function modalToggle(){
         if($('.has_modal').length > 0){
@@ -89,5 +102,19 @@ jQuery(function($) {
         if($('.hero .hero__logo').length > 0){
             $('.hero .hero__logo').addClass('visible');
         }
+    }
+
+    function controls(){
+        $('.single-job__controls').each(function(){
+            let top = $(this).prev().outerHeight() - $(this).outerHeight();
+            $(this).css('top', top);
+        });
+    }
+
+    function singleJobCopyBody(){
+        $('.single-job__copy-body').each(function(){
+            let height = $(this).prev().outerHeight();
+            $(this).css('height', 'calc(100% - ' + height + 'px)');
+        })
     }
 });

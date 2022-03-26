@@ -63,7 +63,7 @@
             .work__job-modal {
                 opacity: 1;
                 display: none;
-                z-index: 3;
+                z-index: 1000;
                 background-color: $main-background;
                 width: 90%;
                 position: fixed;
@@ -78,8 +78,10 @@
 
                 @include mediaMin($main){
                     width: 80%;
-                    padding: 20px;
+                    max-width: 1280px;
+                    padding: 40px;
                     height: auto;
+                    max-height: 480px;
                 }
 
                 .work__job-modal-close {
@@ -91,10 +93,15 @@
                     background-size: contain;
                     cursor: pointer;
                     transform: translateX(50%);
+                    -webkit-user-select: none; /* Safari */        
+                    -moz-user-select: none; /* Firefox */
+                    -ms-user-select: none; /* IE10+/Edge */
+                    user-select: none; /* Standard */
+
 
                     @include mediaMin($main){
-                        right: 20px;
-                        top: 20px;
+                        right: 0px;
+                        top: 0px;
                         width: 20px;
                         height: 20px;
                         transform: translateX(0%);
@@ -102,6 +109,16 @@
                         height: 15px;
                         background-image: url(/wp-content/themes/weldon/assets/img/icons/close-line.svg);
                         color: transparent;
+                    }
+                }
+
+                .single-job__copy {
+                    h3 {
+                        width: calc(100% - 35px);
+                    }
+
+                    .single-job__copy-body {
+                        overflow-y: scroll;
                     }
                 }
             }
@@ -160,7 +177,6 @@
 
             .single-job__controls {
                 position: absolute;
-                bottom: 0;
                 right: calc(50% + 20px);
                 z-index: 1000;
                 display: none;
@@ -197,9 +213,6 @@
                     width: 50%;
                     max-width: 50%;
                     margin-left: 20px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
                     overflow-y: hidden;
                 }
 

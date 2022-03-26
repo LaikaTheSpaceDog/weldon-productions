@@ -159,20 +159,22 @@ if ( have_posts() ) {
 												<?php endif; ?>
 												<div class="single-job__copy">
 													<h3><?= get_field('title', $job); ?></h3>
-													<p><?= get_field('description', $job); ?></p>
-													<?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
-														<div class="single-job__links">
-															<?php if(get_field('link_1', $job)): ?>
-																<a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
-															<?php endif; ?>
-															<?php if(get_field('link_2', $job)): ?>
-																<a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
-															<?php endif; ?>
-															<?php if(get_field('link_3', $job)): ?>
-																<a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
-															<?php endif; ?>
-														</div>
-													<?php endif; ?>
+                                                    <div class="single-job__copy-body">
+                                                        <p><?= get_field('description', $job); ?></p>
+                                                        <?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
+                                                            <div class="single-job__links">
+                                                                <?php if(get_field('link_1', $job)): ?>
+                                                                    <a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
+                                                                <?php endif; ?>
+                                                                <?php if(get_field('link_2', $job)): ?>
+                                                                    <a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
+                                                                <?php endif; ?>
+                                                                <?php if(get_field('link_3', $job)): ?>
+                                                                    <a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>
 												</div>
 											</div>
 										</div>
@@ -265,20 +267,22 @@ if ( have_posts() ) {
 												<?php endif; ?>
 												<div class="single-job__copy">
 													<h3><?= get_field('title', $job); ?></h3>
-													<p><?= get_field('description', $job); ?></p>
-													<?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
-														<div class="single-job__links">
-															<?php if(get_field('link_1', $job)): ?>
-																<a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
-															<?php endif; ?>
-															<?php if(get_field('link_2', $job)): ?>
-																<a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
-															<?php endif; ?>
-															<?php if(get_field('link_3', $job)): ?>
-																<a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
-															<?php endif; ?>
-														</div>
-													<?php endif; ?>
+                                                    <div class="single-job__copy-body">
+                                                        <p><?= get_field('description', $job); ?></p>
+                                                        <?php if(get_field('link_1', $job) || get_field('link_2', $job) || get_field('link_3', $job)): ?>
+                                                            <div class="single-job__links">
+                                                                <?php if(get_field('link_1', $job)): ?>
+                                                                    <a class="link" href="<?= get_field('link_1', $job)['url']; ?>"><?= get_field('link_1', $job)['title']; ?></a>
+                                                                <?php endif; ?>
+                                                                <?php if(get_field('link_2', $job)): ?>
+                                                                    <a class="link" href="<?= get_field('link_2', $job)['url']; ?>"><?= get_field('link_2', $job)['title']; ?></a>
+                                                                <?php endif; ?>
+                                                                <?php if(get_field('link_3', $job)): ?>
+                                                                    <a class="link" href="<?= get_field('link_3', $job)['url']; ?>"><?= get_field('link_3', $job)['title']; ?></a>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                    </div>
 												</div>
 											</div>
 										</div>
