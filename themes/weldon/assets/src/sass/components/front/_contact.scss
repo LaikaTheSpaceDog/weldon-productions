@@ -43,6 +43,12 @@
                     color: $brand-pink;
                 }
 
+                .textarea-wrap {
+                    textarea {
+                        font-family: $font-alpha !important;
+                    }
+                }
+
                 .submit-wrap {
                     input {
                         background: $colour-text-body;

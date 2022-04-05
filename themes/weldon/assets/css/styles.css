@@ -947,6 +947,9 @@ h4, .h4 {
 .contact .contact__inner .contact__left .nf-form-cont .ninja-forms-req-symbol {
   color: #ec5b6d;
 }
+.contact .contact__inner .contact__left .nf-form-cont .textarea-wrap textarea {
+  font-family: "gothambook", sans-serif !important;
+}
 .contact .contact__inner .contact__left .nf-form-cont .submit-wrap input {
   background: #203c39;
   color: #f8f6f4;
@@ -1052,7 +1055,7 @@ h4, .h4 {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0px 12px 40px #00000029;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.1607843137);
   padding: 40px 20px;
   border-radius: 5px;
   overflow: hidden;
